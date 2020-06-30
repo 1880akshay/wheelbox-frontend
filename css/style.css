@@ -10164,6 +10164,8 @@ textarea.form-control {
 .tab {
   overflow: hidden;
   border: 1px solid #ccc;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
   background-color: #f1f1f1;
   width: 100%;
 }
@@ -10199,6 +10201,8 @@ textarea.form-control {
   padding: 20px 15px;
   border: 1px solid #ccc;
   border-top: none;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
   width: 100%;
 }
 
