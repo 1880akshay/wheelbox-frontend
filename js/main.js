@@ -133,6 +133,52 @@
 			autoplayTimeout:3500,
 			autoplayHoverPause:true
 		})
+		$('.single-product-images').owlCarousel({
+			center: true,
+			loop: true,
+			items:1,
+			margin: 30,
+			stagePadding: 0,
+			nav: true,
+			navText: ['<span class="ion-ios-arrow-back single-back">', '<span class="ion-ios-arrow-forward single-forward">'],
+			responsive:{
+				0:{
+					items: 1
+				},
+				600:{
+					items: 1
+				},
+				1000:{
+					items: 1
+				}
+			},
+			autoplay:true,
+			autoplayTimeout:5000,
+			autoplayHoverPause:true
+		})
+		$('.carousel-reviews').owlCarousel({
+			center: true,
+			loop: true,
+			items:1,
+			margin: 30,
+			stagePadding: 0,
+			nav: true,
+			navText: ['<span class="ion-ios-arrow-back">', '<span class="ion-ios-arrow-forward">'],
+			responsive:{
+				0:{
+					items: 1
+				},
+				600:{
+					items: 1
+				},
+				1000:{
+					items: 1
+				}
+			},
+			autoplay:true,
+			autoplayTimeout:5000,
+			autoplayHoverPause:true
+		})
 
 	};
 	carousel();
@@ -338,7 +384,15 @@
 	};
 	goHere();
 
-
+	if($(window).width() > 700) {
+		$('.single-product-images').hover(function() {
+			$('.single-back').fadeIn();
+			$('.single-forward').fadeIn();
+		}, function() {
+			$('.single-back').fadeOut('fast');
+			$('.single-forward').fadeOut('fast');
+		});
+	}
 
 
 })(jQuery);

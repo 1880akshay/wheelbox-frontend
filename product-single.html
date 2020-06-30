@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Winkel - Free Bootstrap 4 Template by Colorlib</title>
+    <title>Wheelbox - Single Product</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="goto-here">
-		<div class="py-1 bg-black">
+	<!-- <div class="py-1 bg-black">
     	<div class="container">
     		<div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
 	    		<div class="col-lg-12 d-block">
@@ -47,12 +47,12 @@
 			    </div>
 		    </div>
 		  </div>
-    </div>
+    </div> -->
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Winkel</a>
-	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
+	      <a class="navbar-brand" href="index.html">Wheelbox</a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation" onclick="menutox()">
+	        <span class="oi oi-menu" id="menux" style="color: #fff;"></span>
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
@@ -78,7 +78,7 @@
 	  </nav>
     <!-- END nav -->
 
-    <div class="hero-wrap hero-bread" style="background-image: url('images/bg_6.jpg');">
+    <!-- <div class="hero-wrap hero-bread" style="background-image: url('images/bg_6.jpg');">
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
@@ -87,107 +87,319 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <section class="ftco-section">
+    <section class="ftco-section" style="padding-top: 50px;">
     	<div class="container">
     		<div class="row">
-    			<div class="col-lg-6 mb-5 ftco-animate">
-    				<a href="images/menu-2.jpg" class="image-popup"><img src="images/product-1.jpg" class="img-fluid" alt="Colorlib Template"></a>
+    			<div class="col-lg-6 mb-3 ftco-animate single-product-images owl-carousel">
+					<img src="images/product-1.jpg" class="img-fluid">
+					<img src="images/product-1.jpg" class="img-fluid">
+					<img src="images/product-1.jpg" class="img-fluid">
+					<img src="images/product-1.jpg" class="img-fluid">
+					<img src="images/product-1.jpg" class="img-fluid">
+					
     			</div>
     			<div class="col-lg-6 product-details pl-md-5 ftco-animate">
-    				<h3>Young Woman Wearing Dress</h3>
+    				<h3>Product Name</h3>
     				<div class="rating d-flex">
 							<p class="text-left mr-4">
-								<a href="#" class="mr-2">5.0</a>
-								<a href="#"><span class="ion-ios-star-outline"></span></a>
-								<a href="#"><span class="ion-ios-star-outline"></span></a>
-								<a href="#"><span class="ion-ios-star-outline"></span></a>
-								<a href="#"><span class="ion-ios-star-outline"></span></a>
+								<a href="#" class="mr-2">4.0</a>
+								<a href="#"><span class="ion-ios-star"></span></a>
+								<a href="#"><span class="ion-ios-star"></span></a>
+								<a href="#"><span class="ion-ios-star"></span></a>
+								<a href="#"><span class="ion-ios-star"></span></a>
 								<a href="#"><span class="ion-ios-star-outline"></span></a>
 							</p>
 							<p class="text-left mr-4">
-								<a href="#" class="mr-2" style="color: #000;">100 <span style="color: #bbb;">Rating</span></a>
+								<a href="#" class="mr-2" style="color: #000;">100 <span style="color: #bbb;">Ratings</span></a>
 							</p>
-							<p class="text-left">
+							<!-- <p class="text-left">
 								<a href="#" class="mr-2" style="color: #000;">500 <span style="color: #bbb;">Sold</span></a>
-							</p>
+							</p> -->
 						</div>
-    				<p class="price"><span>$120.00</span></p>
-    				<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-    				<p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.
-						</p>
-						<div class="row mt-4">
-							<div class="col-md-6">
-								<div class="form-group d-flex">
-		              <div class="select-wrap">
-	                  <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-	                  <select name="" id="" class="form-control">
-	                  	<option value="">Small</option>
-	                    <option value="">Medium</option>
-	                    <option value="">Large</option>
-	                    <option value="">Extra Large</option>
-	                  </select>
-	                </div>
-		            </div>
+						<hr>
+					MRP: <span class="mrp-lt">&#8377; 999</span><br>
+					Price: <h4 class="actual-price">&#8377; 600</h4><br>
+					Savings: <h6 class="savings">&#8377; 399 (40%)</h6><br>
+					<div class="d-flex features">
+						<div class="text-center features-single">
+							<div class="icon"><span class="flaticon-002-recommended"></span></div>
+							Easy Returns
+						</div>
+						<div class="text-center features-single">
+							<div class="icon"><span class="flaticon-001-box"></span></div>
+							Premium Packaging
+						</div>
+						<div class="text-center features-single">
+							<div class="icon"><span class="flaticon-003-medal icon"></span></div>
+							Superior Quality
+						</div>
+					</div>
+					<hr>
+					
+					<div class="text-success">In Stock</div>
+					<div class="text-danger" style="display: none;">Out of Stock</div>
+					<div class="row mt-2">
+						<div class="col-6">
+							Size
+							<div class="form-group">
+								<div class="select-wrap">
+				  					<div class="icon"><span class="ion-ios-arrow-down"></span></div>
+									  <select name="" class="form-control" style="border: 1px solid #b3b3b3 !important;">
+										<option value="">Select</option>
+										<option value="">OneSize</option>
+					  					<!-- <option value="">Small</option>
+										<option value="">Medium</option>
+										<option value="">Large</option>
+										<option value="">Extra Large</option> -->
+				  					</select>
+								</div>
 							</div>
-							<div class="w-100"></div>
-							<div class="input-group col-md-6 d-flex mb-3">
-	             	<span class="input-group-btn mr-2">
-	                	<button type="button" class="quantity-left-minus btn"  data-type="minus" data-field="">
-	                   <i class="ion-ios-remove"></i>
-	                	</button>
-	            		</span>
-	             	<input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
-	             	<span class="input-group-btn ml-2">
-	                	<button type="button" class="quantity-right-plus btn" data-type="plus" data-field="">
-	                     <i class="ion-ios-add"></i>
-	                 </button>
-	             	</span>
-	          	</div>
-	          	<div class="w-100"></div>
-	          	<div class="col-md-12">
-	          		<p style="color: #000;">80 piece available</p>
-	          	</div>
-          	</div>
-          	<p><a href="cart.html" class="btn btn-black py-3 px-5">Add to Cart</a></p>
+						</div>
+						<div class="col-6">
+							Quantity
+							<div class="input-group">
+								<span class="input-group-btn mr-1">
+									   <button type="button" class="quantity-left-minus btn" style="border: 1px solid #b3b3b3 !important;" data-type="minus" data-field="">
+										  <i class="ion-ios-remove"></i>
+									   </button>
+								</span>
+								<input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" style="border: 1px solid #b3b3b3 !important;" disabled>
+								<span class="input-group-btn ml-1">
+									   <button type="button" class="quantity-right-plus btn" style="border: 1px solid #b3b3b3 !important;" data-type="plus" data-field="">
+										<i class="ion-ios-add"></i>
+									</button>
+								</span>
+							</div>
+						</div>
+					</div>
+    				<!-- <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+					<p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p> -->
+					<div class="container">
+						<div class="row mt-2">
+							<div class="tab">
+								<button class="tablinks" onclick="openTab(event, 'description')" id="defaultOpen">Product Description</button>
+								<button class="tablinks" onclick="openTab(event, 'details')">Product Details</button>
+							</div>
+							  
+							  <div id="description" class="tabcontent">
+								<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+								<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+							  </div>
+							  
+							  <div id="details" class="tabcontent">
+								<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p> 
+								<p><ul>
+									<li>A small river named Duden flows by their place</li>
+									<li>and supplies it with the necessary regelialia.</li>
+									<li>It is a paradisematic country, in which</li>
+									<li>roasted parts of sentences fly into your mouth.</li>
+								</ul></p>
+							  </div>
+						</div>
+					</div>
+						<div class="row mt-4">
+							<!-- <div class="col-md-12">
+								<p style="color: #000;">80 piece available</p>
+							</div> -->
+						</div>
+						  
+						  
+						  <div class="row text-center">
+							  <div class="col-6">
+								<a href="cart.html" class="btn btn-orange py-3 px-3" style="width: 90%;">Add to Cart</a>
+							  </div>
+							  <div class="col-6">
+								<a href="checkout.html" class="btn btn-black py-3 px-3" style="width: 90%;">Buy Now</a>
+							  </div>
+						  </div>
     			</div>
-    		</div>
+			</div>
     	</div>
-    </section>
+	</section>
+	
+	<section class="ftco-section bg-light">
+		<div class="container">
+			<div class="row justify-content-center mb-3 pb-3">
+				<div class="col-md-12 heading-section text-center ftco-animate" style="margin-top: -50px;">
+					<h2 class="mb-4">Customer Reviews</h2>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 ftco-animate">
+					<div class="rating d-flex">
+						<p class="text-left mr-4">
+							<a href="#" class="mr-2">4.0</a>
+							<a href="#"><span class="ion-ios-star"></span></a>
+							<a href="#"><span class="ion-ios-star"></span></a>
+							<a href="#"><span class="ion-ios-star"></span></a>
+							<a href="#"><span class="ion-ios-star"></span></a>
+							<a href="#"><span class="ion-ios-star-outline"></span></a>
+						</p>
+						<p class="text-left mr-4">
+							<a href="#" class="mr-2" style="color: #000;">100 <span style="color: #bbb;">Ratings</span></a>
+						</p>
+					</div>
+					<div class="row" style="margin-bottom: 5px; margin-top: 20px;">
+						<div class="col-3">5 Star</div>
+						<div class="col-9">
+							<div class="progress stars">
+								<div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+									<span style="color: black;">20%</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row" style="margin-bottom: 5px;">
+						<div class="col-3">4 Star</div>
+						<div class="col-9">
+							<div class="progress stars">
+								<div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%;">
+								<span style="color: black;">70%</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row" style="margin-bottom: 5px;">
+						<div class="col-3">3 Star</div>
+						<div class="col-9">
+							<div class="progress stars">
+								<div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width:10%">
+									<span style="color: black;">10%</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row" style="margin-bottom: 5px;">
+						<div class="col-3">2 Star</div>
+						<div class="col-9">
+							<div class="progress stars">
+								<div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+									<span style="color: black;">0%</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row" style="margin-bottom: 5px;">
+						<div class="col-3">1 Star</div>
+						<div class="col-9">
+							<div class="progress stars">
+								<div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+									<span style="color: black;">0%</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row" style="margin-top: 50px; margin-bottom: 50px;">
+						<div class="col-12"><button class="btn btn-orange" style="width: 100%; padding: 10px;">Add a Review</button></div>
+					</div>
+				</div>
+				<div class="col-md-2"></div>
+				<div class="col-md-6 ftco-animate testimony-section">
+					<div class="carousel-reviews owl-carousel" style="margin-top: -60px;">
+						<div class="item">
+						  <div class="testimony-wrap p-4 pb-5">
+							<div class="user-img mb-5" style="background-image: url(images/person_1.jpg); margin-top: 0;">
+							  <span class="quote d-flex align-items-center justify-content-center">
+								<i class="icon-quote-left"></i>
+							  </span>
+							</div>
+							<div class="text">
+							  <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+							  <p class="name">Garreth Smith</p>
+							  
+							</div>
+						  </div>
+						</div>
+						<div class="item">
+						  <div class="testimony-wrap p-4 pb-5">
+							<div class="user-img mb-5" style="background-image: url(images/person_2.jpg); margin-top: 0;">
+							  <span class="quote d-flex align-items-center justify-content-center">
+								<i class="icon-quote-left"></i>
+							  </span>
+							</div>
+							<div class="text">
+							  <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+							  <p class="name">Garreth Smith</p>
+							  
+							</div>
+						  </div>
+						</div>
+						<div class="item">
+						  <div class="testimony-wrap p-4 pb-5">
+							<div class="user-img mb-5" style="background-image: url(images/person_3.jpg); margin-top: 0;">
+							  <span class="quote d-flex align-items-center justify-content-center">
+								<i class="icon-quote-left"></i>
+							  </span>
+							</div>
+							<div class="text">
+							  <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+							  <p class="name">Garreth Smith</p>
+							  
+							</div>
+						  </div>
+						</div>
+						<div class="item">
+						  <div class="testimony-wrap p-4 pb-5">
+							<div class="user-img mb-5" style="background-image: url(images/person_1.jpg); margin-top: 0;">
+							  <span class="quote d-flex align-items-center justify-content-center">
+								<i class="icon-quote-left"></i>
+							  </span>
+							</div>
+							<div class="text">
+							  <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+							  <p class="name">Garreth Smith</p>
+							  
+							</div>
+						  </div>
+						</div>
+						<div class="item">
+						  <div class="testimony-wrap p-4 pb-5">
+							<div class="user-img mb-5" style="background-image: url(images/person_2.jpg); margin-top: 0;">
+							  <span class="quote d-flex align-items-center justify-content-center">
+								<i class="icon-quote-left"></i>
+							  </span>
+							</div>
+							<div class="text">
+							  <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+							  <p class="name">Garreth Smith</p>
+							  
+							</div>
+						  </div>
+						</div>
+					  </div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-    <section class="ftco-section bg-light">
+    <section class="ftco-section cat-sec">
     	<div class="container">
 				<div class="row justify-content-center mb-3 pb-3">
-          <div class="col-md-12 heading-section text-center ftco-animate">
-            <h2 class="mb-4">Ralated Products</h2>
+          <div class="col-md-12 heading-section text-center ftco-animate" style="margin-top: -50px;">
+            <h2 class="mb-4">Similar Products</h2>
             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
           </div>
         </div>   		
     	</div>
     	<div class="container">
     		<div class="row">
-    			<div class="col-sm col-md-6 col-lg ftco-animate">
+    			<div class="col-6 col-lg-3 ftco-animate">
     				<div class="product">
-    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-1.jpg" alt="Colorlib Template">
+    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-1.jpg" alt="">
     						<span class="status">30%</span>
     						<div class="overlay"></div>
     					</a>
     					<div class="text py-3 px-3">
-    						<h3><a href="#">Floral Jackquard Pullover</a></h3>
+    						<h3><a href="#">Product Name</a></h3>
     						<div class="d-flex">
     							<div class="pricing">
 		    						<p class="price"><span class="mr-2 price-dc">$120.00</span><span class="price-sale">$80.00</span></p>
 		    					</div>
-		    					<div class="rating">
-	    							<p class="text-right">
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    							</p>
-	    						</div>
+		    					
 	    					</div>
 	    					<p class="bottom-area d-flex px-3">
     							<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
@@ -196,26 +408,18 @@
     					</div>
     				</div>
     			</div>
-    			<div class="col-sm col-md-6 col-lg ftco-animate">
+    			<div class="col-6 col-lg-3 ftco-animate">
     				<div class="product">
-    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-2.jpg" alt="Colorlib Template">
+    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-2.jpg" alt="">
     						<div class="overlay"></div>
     					</a>
     					<div class="text py-3 px-3">
-    						<h3><a href="#">Floral Jackquard Pullover</a></h3>
+    						<h3><a href="#">Product Name</a></h3>
     						<div class="d-flex">
     							<div class="pricing">
 		    						<p class="price"><span>$120.00</span></p>
 		    					</div>
-		    					<div class="rating">
-	    							<p class="text-right">
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    							</p>
-	    						</div>
+		    					
 	    					</div>
     						<p class="bottom-area d-flex px-3">
     							<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
@@ -224,26 +428,18 @@
     					</div>
     				</div>
     			</div>
-    			<div class="col-sm col-md-6 col-lg ftco-animate">
+    			<div class="col-6 col-lg-3 ftco-animate">
     				<div class="product">
-    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-3.jpg" alt="Colorlib Template">
+    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-3.jpg" alt="">
 	    					<div class="overlay"></div>
 	    				</a>
     					<div class="text py-3 px-3">
-    						<h3><a href="#">Floral Jackquard Pullover</a></h3>
+    						<h3><a href="#">Product Name</a></h3>
     						<div class="d-flex">
     							<div class="pricing">
 		    						<p class="price"><span>$120.00</span></p>
 		    					</div>
-		    					<div class="rating">
-	    							<p class="text-right">
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    							</p>
-	    						</div>
+		    					
 	    					</div>
     						<p class="bottom-area d-flex px-3">
     							<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
@@ -252,26 +448,18 @@
     					</div>
     				</div>
     			</div>
-    			<div class="col-sm col-md-6 col-lg ftco-animate">
+    			<div class="col-6 col-lg-3 ftco-animate">
     				<div class="product">
-    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-4.jpg" alt="Colorlib Template">
+    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-4.jpg" alt="">
     						<div class="overlay"></div>
     					</a>
     					<div class="text py-3 px-3">
-    						<h3><a href="#">Floral Jackquard Pullover</a></h3>
+    						<h3><a href="#">Product Name</a></h3>
     						<div class="d-flex">
     							<div class="pricing">
 		    						<p class="price"><span>$120.00</span></p>
 		    					</div>
-		    					<div class="rating">
-	    							<p class="text-right">
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    							</p>
-	    						</div>
+		    					
 	    					</div>
     						<p class="bottom-area d-flex px-3">
     							<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
@@ -296,7 +484,7 @@
         <div class="row mb-5">
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Winkel</h2>
+              <h2 class="ftco-heading-2">Wheelbox</h2>
               <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
@@ -346,15 +534,15 @@
             </div>
           </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-md-12 text-center">
 
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            <p>Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
 						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-						  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						  Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
 						</p>
           </div>
-        </div>
+        </div> -->
       </div>
     </footer>
     
@@ -384,7 +572,7 @@
   <script>
 		$(document).ready(function(){
 
-		var quantitiy=0;
+		var quantity=0;
 		   $('.quantity-right-plus').click(function(e){
 		        
 		        // Stop acting like a button
@@ -393,8 +581,7 @@
 		        var quantity = parseInt($('#quantity').val());
 		        
 		        // If is not undefined
-		            
-		            $('#quantity').val(quantity + 1);
+		         if(quantity < 10)  $('#quantity').val(quantity + 1);
 
 		          
 		            // Increment
@@ -409,13 +596,29 @@
 		        
 		        // If is not undefined
 		      
-		            // Increment
-		            if(quantity>0){
+		            // decrement
+		            if(quantity>1){
 		            $('#quantity').val(quantity - 1);
 		            }
 		    });
 		    
 		});
+		function openTab(evt, divId) {
+			var i, tabcontent, tablinks;
+			tabcontent = document.getElementsByClassName("tabcontent");
+			for (i = 0; i < tabcontent.length; i++) {
+				tabcontent[i].style.display = "none";
+			}
+			tablinks = document.getElementsByClassName("tablinks");
+			for (i = 0; i < tablinks.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(" active", "");
+			}
+			document.getElementById(divId).style.display = "block";
+			evt.currentTarget.className += " active";
+		}
+
+		// Get the element with id="defaultOpen" and click on it
+		document.getElementById("defaultOpen").click();
 	</script>
     
   </body>
