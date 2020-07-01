@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Winkel - Free Bootstrap 4 Template by Colorlib</title>
+    <title>Wheelbox - Collection</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
@@ -27,7 +28,7 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="goto-here">
-		<div class="py-1 bg-black">
+	<!-- <div class="py-1 bg-black">
     	<div class="container">
     		<div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
 	    		<div class="col-lg-12 d-block">
@@ -47,12 +48,12 @@
 			    </div>
 		    </div>
 		  </div>
-    </div>
+    </div> -->
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Winkel</a>
+	      <a class="navbar-brand" href="index.html">Wheelbox</a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
+	        <span class="oi oi-menu"></span>
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
@@ -78,25 +79,44 @@
 	  </nav>
     <!-- END nav -->
 
-    <div class="hero-wrap hero-bread" style="background-image: url('images/bg_6.jpg');">
+    <div class="hero-wrap hero-bread" style="background-image: url('images/collection-bg.jpg');">
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Products</span></p>
-            <h1 class="mb-0 bread">Collection Products</h1>
+          	
+            <h1 class="mb-0 bread">Collection Name</h1>
           </div>
         </div>
       </div>
     </div>
 
-    <section class="ftco-section bg-light">
+    <section class="ftco-section bg-light" style="padding-top: 2em;">
     	<div class="container">
+			<div class="row" style="margin-bottom: 2em;"> 
+				<div class="col-md-10"></div>
+				<div class="col-md-2">
+					<button class="sort-filter" title="Filter"><i class="fa fa-filter"></i></button>
+					<div class="dropdown">
+						<button class="sort-filter" type="button" data-toggle="dropdown" title="Sort"><i class="fa fa-sort"></i></button>
+						<ul class="dropdown-menu dropdown-menu-right" id="sort-list">
+							<li><a href="#">Most Relevant</a></li>
+							<hr style="margin: 0;">
+							<li><a href="#">Newest Arrivals</a></li>
+							<hr style="margin: 0;">
+							<li><a href="#">Price: Low to High</a></li>
+							<hr style="margin: 0;">
+							<li><a href="#">Price: High to Low</a></li>
+						</ul>
+					</div>
+					
+				</div>
+			</div>
     		<div class="row">
     			<div class="col-md-8 col-lg-10 order-md-last">
     				<div class="row">
-		    			<div class="col-sm-6 col-md-6 col-lg-4 ftco-animate">
+		    			<div class="col-6 col-lg-4 ftco-animate">
 		    				<div class="product">
-		    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-1.jpg" alt="Colorlib Template">
+		    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-1.jpg" alt="">
 		    						<span class="status">30%</span>
 		    						<div class="overlay"></div>
 		    					</a>
@@ -106,26 +126,18 @@
 		    							<div class="pricing">
 				    						<p class="price"><span class="mr-2 price-dc">$120.00</span><span class="price-sale">$80.00</span></p>
 				    					</div>
-				    					<div class="rating">
-			    							<p class="text-right">
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    							</p>
-			    						</div>
+				    					
 			    					</div>
 			    					<p class="bottom-area d-flex px-3">
-		    							<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
-		    							<a href="#" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a>
+		    							<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart</span></a>
+		    							<a href="#" class="buy-now text-center py-2">Buy now<span></span></a>
 		    						</p>
 		    					</div>
 		    				</div>
 		    			</div>
-		    			<div class="col-sm-6 col-md-6 col-lg-4 ftco-animate">
+		    			<div class="col-6 col-lg-4 ftco-animate">
 		    				<div class="product">
-		    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-2.jpg" alt="Colorlib Template">
+		    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-2.jpg" alt="">
 		    						<div class="overlay"></div>
 		    					</a>
 		    					<div class="text py-3 px-3">
@@ -134,26 +146,18 @@
 		    							<div class="pricing">
 				    						<p class="price"><span>$120.00</span></p>
 				    					</div>
-				    					<div class="rating">
-			    							<p class="text-right">
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    							</p>
-			    						</div>
+				    					
 			    					</div>
 		    						<p class="bottom-area d-flex px-3">
-		    							<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
-		    							<a href="#" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a>
+		    							<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart</span></a>
+		    							<a href="#" class="buy-now text-center py-2">Buy now<span></span></a>
 		    						</p>
 		    					</div>
 		    				</div>
 		    			</div>
-		    			<div class="col-sm-6 col-md-6 col-lg-4 ftco-animate">
+		    			<div class="col-6 col-lg-4 ftco-animate">
 		    				<div class="product">
-		    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-3.jpg" alt="Colorlib Template">
+		    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-3.jpg" alt="">
 			    					<div class="overlay"></div>
 			    				</a>
 		    					<div class="text py-3 px-3">
@@ -162,26 +166,18 @@
 		    							<div class="pricing">
 				    						<p class="price"><span>$120.00</span></p>
 				    					</div>
-				    					<div class="rating">
-			    							<p class="text-right">
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    							</p>
-			    						</div>
+				    					
 			    					</div>
 		    						<p class="bottom-area d-flex px-3">
-		    							<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
-		    							<a href="#" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a>
+		    							<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart</span></a>
+		    							<a href="#" class="buy-now text-center py-2">Buy now<span></span></a>
 		    						</p>
 		    					</div>
 		    				</div>
 		    			</div>
-		    			<div class="col-sm-6 col-md-6 col-lg-4 ftco-animate">
+		    			<div class="col-6 col-lg-4 ftco-animate">
 		    				<div class="product">
-		    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-4.jpg" alt="Colorlib Template">
+		    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-4.jpg" alt="">
 		    						<div class="overlay"></div>
 		    					</a>
 		    					<div class="text py-3 px-3">
@@ -190,26 +186,18 @@
 		    							<div class="pricing">
 				    						<p class="price"><span>$120.00</span></p>
 				    					</div>
-				    					<div class="rating">
-			    							<p class="text-right">
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    							</p>
-			    						</div>
+				    					
 			    					</div>
 		    						<p class="bottom-area d-flex px-3">
-		    							<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
-		    							<a href="#" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a>
+		    							<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart</span></a>
+		    							<a href="#" class="buy-now text-center py-2">Buy now<span></span></a>
 		    						</p>
 		    					</div>
 		    				</div>
 		    			</div>
-		    			<div class="col-sm-6 col-md-6 col-lg-4 ftco-animate">
+		    			<div class="col-6 col-lg-4 ftco-animate">
 		    				<div class="product">
-		    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-5.jpg" alt="Colorlib Template">
+		    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-5.jpg" alt="">
 		    						<div class="overlay"></div>
 		    					</a>
 		    					<div class="text py-3 px-3">
@@ -218,26 +206,18 @@
 		    							<div class="pricing">
 				    						<p class="price"><span>$120.00</span></p>
 				    					</div>
-				    					<div class="rating">
-			    							<p class="text-right">
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    							</p>
-			    						</div>
+				    					
 			    					</div>
 		    						<p class="bottom-area d-flex px-3">
-		    							<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
-		    							<a href="#" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a>
+		    							<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart</span></a>
+		    							<a href="#" class="buy-now text-center py-2">Buy now<span></span></a>
 		    						</p>
 		    					</div>
 		    				</div>
 		    			</div>
-		    			<div class="col-sm-6 col-md-6 col-lg-4 ftco-animate">
+		    			<div class="col-6 col-lg-4 ftco-animate">
 		    				<div class="product">
-		    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-6.jpg" alt="Colorlib Template">
+		    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-6.jpg" alt="">
 		    						<div class="overlay"></div>
 		    					</a>
 		    					<div class="text py-3 px-3">
@@ -246,26 +226,18 @@
 		    							<div class="pricing">
 				    						<p class="price"><span>$120.00</span></p>
 				    					</div>
-				    					<div class="rating">
-			    							<p class="text-right">
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    							</p>
-			    						</div>
+				    					
 			    					</div>
 		    						<p class="bottom-area d-flex px-3">
-		    							<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
-		    							<a href="#" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a>
+		    							<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart</span></a>
+		    							<a href="#" class="buy-now text-center py-2">Buy now<span></span></a>
 		    						</p>
 		    					</div>
 		    				</div>
 		    			</div>
-		    			<div class="col-sm-6 col-md-6 col-lg-4 ftco-animate">
+		    			<div class="col-6 col-lg-4 ftco-animate">
 		    				<div class="product">
-		    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-7.jpg" alt="Colorlib Template">
+		    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-7.jpg" alt="">
 		    						<div class="overlay"></div>
 		    					</a>
 		    					<div class="text py-3 px-3">
@@ -274,26 +246,18 @@
 		    							<div class="pricing">
 				    						<p class="price"><span>$120.00</span></p>
 				    					</div>
-				    					<div class="rating">
-			    							<p class="text-right">
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    							</p>
-			    						</div>
+				    					
 			    					</div>
 		    						<p class="bottom-area d-flex px-3">
-		    							<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
-		    							<a href="#" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a>
+		    							<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart</span></a>
+		    							<a href="#" class="buy-now text-center py-2">Buy now<span></span></a>
 		    						</p>
 		    					</div>
 		    				</div>
 		    			</div>
-		    			<div class="col-sm-6 col-md-6 col-lg-4 ftco-animate">
+		    			<div class="col-6 col-lg-4 ftco-animate">
 		    				<div class="product">
-		    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-8.jpg" alt="Colorlib Template">
+		    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-8.jpg" alt="">
 		    						<div class="overlay"></div>
 		    					</a>
 		    					<div class="text py-3 px-3">
@@ -302,25 +266,17 @@
 		    							<div class="pricing">
 				    						<p class="price"><span>$120.00</span></p>
 				    					</div>
-				    					<div class="rating">
-			    							<p class="text-right">
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-			    							</p>
-			    						</div>
+				    					
 			    					</div>
 		    						<p class="bottom-area d-flex px-3">
-		    							<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
-		    							<a href="#" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a>
+		    							<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart</span></a>
+		    							<a href="#" class="buy-now text-center py-2">Buy now<span></span></a>
 		    						</p>
 		    					</div>
 		    				</div>
 		    			</div>
 		    		</div>
-		    		<div class="row mt-5">
+		    		<div class="row mt-5 pagination-row">
 		          <div class="col text-center">
 		            <div class="block-27">
 		              <ul>
@@ -339,55 +295,45 @@
 
 		    	<div class="col-md-4 col-lg-2 sidebar">
 		    		<div class="sidebar-box-2">
-		    			<h2 class="heading mb-4"><a href="#">Clothing</a></h2>
-		    			<ul>
-		    				<li><a href="#">Shirts &amp; Tops</a></li>
-								<li><a href="#">Dresses</a></li>
-								<li><a href="#">Shorts &amp; Skirts</a></li>
-								<li><a href="#">Jackets</a></li>
-								<li><a href="#">Coats</a></li>
-								<li><a href="#">Sleeveless</a></li>
-								<li><a href="#">Trousers</a></li>
-								<li><a href="#">Winter Coats</a></li>
-								<li><a href="#">Jumpsuits</a></li>
+						<h2 class="heading mb-2 side-categories">Bedding<span style="float: right;">-</span></h2>
+						<hr style="margin-top: 0px;">
+		    			<ul class="side-drop" style="display: block;">
+		    				<li><a href="#">Bedsheets</a></li>
+								<li><a href="#">Bed Cover</a></li>
+								<li><a href="#">Bedding Set</a></li>
+								<li><a href="#">Quilts</a></li>
+								<li><a href="#">Dohar</a></li>
+								
 		    			</ul>
 		    		</div>
 		    		<div class="sidebar-box-2">
-		    			<h2 class="heading mb-4"><a href="#">Jeans</a></h2>
-		    			<ul>
-		    				<li><a href="#">Shirts &amp; Tops</a></li>
-								<li><a href="#">Dresses</a></li>
-								<li><a href="#">Shorts &amp; Skirts</a></li>
-								<li><a href="#">Jackets</a></li>
-								<li><a href="#">Coats</a></li>
-								<li><a href="#">Jeans</a></li>
-								<li><a href="#">Sleeveless</a></li>
-								<li><a href="#">Trousers</a></li>
-								<li><a href="#">Winter Coats</a></li>
-								<li><a href="#">Jumpsuits</a></li>
+						<h2 class="heading mb-2 side-categories">Bath<span style="float: right;">+</span></h2>
+						<hr style="margin-top: 0px;">
+		    			<ul class="side-drop">
+		    				<li><a href="#">Hand Towels</a></li>
+								<li><a href="#">Bath Towels</a></li>
+								
 		    			</ul>
 		    		</div>
 		    		<div class="sidebar-box-2">
-		    			<h2 class="heading mb-2"><a href="#">Bags</a></h2>
-		    			<h2 class="heading mb-2"><a href="#">Accessories</a></h2>
+		    			<h2 class="heading mb-2"><a href="#">Rugs</a></h2>
+		    			<hr style="margin-top: 0px;">
 		    		</div>
-						<div class="sidebar-box-2">
-		    			<h2 class="heading mb-4"><a href="#">Shoes</a></h2>
-		    			<ul>
-		    				<li><a href="#">Nike</a></li>
-								<li><a href="#">Addidas</a></li>
-								<li><a href="#">Skechers</a></li>
-								<li><a href="#">Jackets</a></li>
-								<li><a href="#">Coats</a></li>
-								<li><a href="#">Jeans</a></li>
-		    			</ul>
-		    		</div>
+					<div class="sidebar-box-2">
+		    			<h2 class="heading mb-2"><a href="#">Cushions</a></h2>
+		    			<hr style="margin-top: 0;">
+					</div>
+					<div class="sidebar-box-2">
+		    			<h2 class="heading mb-2"><a href="#">Ready Made Curtains</a></h2>
+		    			<hr style="margin-top: 0;">
+					</div>
+					
     			</div>
     		</div>
     	</div>
     </section>
 
-    <footer class="ftco-footer bg-light ftco-section">
+    <footer class="ftco-footer cat-sec ftco-section">
       <div class="container">
       	<div class="row">
       		<div class="mouse">
@@ -399,7 +345,7 @@
         <div class="row mb-5">
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Winkel</h2>
+              <h2 class="ftco-heading-2">Wheelbox</h2>
               <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
@@ -449,15 +395,15 @@
             </div>
           </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-md-12 text-center">
 
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            <p>Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
 						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-						  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						  Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
 						</p>
           </div>
-        </div>
+        </div> -->
       </div>
     </footer>
     
@@ -483,6 +429,18 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
+
+  <script>
+	  $('.side-categories').click(function() {
+		$(this).next().next().slideToggle('fast');
+		if($(this).find('span').html() === '-') {
+			$(this).find('span').html('+');
+		}
+		else {
+			$(this).find('span').html('-');
+		}
+	  })
+  </script>
     
   </body>
 </html>

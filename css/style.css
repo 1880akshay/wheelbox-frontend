@@ -8252,7 +8252,7 @@ h1, h2, h3, h4, h5,
         background: #fff !important;
         color: #000000; }
   .hero-wrap.hero-bread {
-    padding: 10em 0; }
+    padding: 7em 0; }
 
 .mouse {
   position: absolute;
@@ -9969,9 +9969,12 @@ textarea.form-control {
 .sidebar-box-2 {
   display: block;
   width: 100%;
-  margin-bottom: 40px; }
+  /*margin-bottom: 40px;*/
+  margin-bottom: 20px;
+  cursor: pointer;
+}
   .sidebar-box-2 .heading {
-    font-size: 20px;
+    font-size: 15px;
     text-transform: uppercase; }
     .sidebar-box-2 .heading a {
       color: #000000; }
@@ -10213,4 +10216,37 @@ textarea.form-control {
 .progress.stars .progress-bar {
   background-color: #ffa45c;
   width: 0%;
+}
+
+
+.side-drop {
+  display: none;
+}
+@media (max-width: 768px) {
+  .pagination-row {
+    margin-bottom: 40px;
+  }
+}
+
+.sort-filter {
+  display: inline-block;
+  float: right;
+  margin: 0px 5px 0px 7px;
+  width: 35px;
+  height: 35px;
+  color: black;
+  font-size: 15px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.sort-filter:focus {
+  outline: none;
+}
+.sort-filter:hover {
+  color: #ffa45c;
+}
+#sort-list li a {
+  color: black !important;
+  padding: 10px;
 }
