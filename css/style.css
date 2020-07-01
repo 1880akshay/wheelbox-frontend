@@ -10250,3 +10250,7 @@ textarea.form-control {
   color: black !important;
   padding: 10px;
 }
+#sort-by {
+  padding: 10px;
+  text-transform: uppercase;
+}
