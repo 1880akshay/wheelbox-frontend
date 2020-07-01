@@ -395,6 +395,11 @@
 	}
 
 
+	$('.stars .progress-bar').each(function() {
+		var max = Number($(this).attr('aria-valuenow'));
+		$(this).css('width', max + '%');
+	});
+
 })(jQuery);
 
 
