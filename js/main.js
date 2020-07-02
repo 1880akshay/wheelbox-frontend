@@ -190,16 +190,16 @@
 			// clearTimeout(timer);
 			$this.addClass('show');
 			$this.find('> div').attr('aria-expanded', true);
-			// $this.find('.dropdown-menu').addClass('animated-fast fadeInUp show');
-			$this.find('.dropdown-menu').slideDown('fast');
+			$this.find('.dropdown-menu').addClass('animated-fast fadeIn show');
+			//$this.find('.dropdown-menu').slideDown('fast');
 		}, function(){
 			var $this = $(this);
 				// timer;
 			// timer = setTimeout(function(){
 				$this.removeClass('show');
 				$this.find('> div').attr('aria-expanded', false);
-				// $this.find('.dropdown-menu').removeClass('animated-fast fadeInUp show');
-				$this.find('.dropdown-menu').slideUp('fast');
+				$this.find('.dropdown-menu').removeClass('animated-fast fadeInUp show');
+				//$this.find('.dropdown-menu').slideUp('fast');
 			// }, 100);
 		});
 	}
