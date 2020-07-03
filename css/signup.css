@@ -139,6 +139,22 @@
 .form-v7-content .form-detail .input-text {
 	margin-bottom: 20px;
 }
+#phone {
+    margin-bottom: -5px;
+}
+.send-otp {
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.form-icon {
+    position: absolute;
+    left: 0;
+    top: 33px;
+}
+.send-otp:hover {
+    text-decoration: underline;
+}
 .form-v7-content .form-detail input {
 	width: 100%;
     padding: 1px 15px 1px 15px;
@@ -211,6 +227,7 @@
     margin-top: -30px;
     margin-bottom: 30px;
     text-transform: uppercase;
+    letter-spacing: 2px;
 }
 @media (max-width: 768px) {
     .login-signup {
