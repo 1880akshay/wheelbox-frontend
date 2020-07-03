@@ -134,3 +134,8 @@ $('#l2h').click(function() {
     products.sort((a, b) => (a.price > b.price) ? 1 : -1);
     $('.block-27 ul li:eq(1)').click();
 });
+
+//newest arrivals
+$('#na').click(function() {
+    location.reload();
+})
