@@ -116,7 +116,7 @@
                                 <input type="tel" name="phone" id="phone" pattern="^\d{10}$" class="input-text" required>
                                 <i class="fa fa-phone form-icon"></i>
                             </div>
-                            <center><span class="send-otp">Send OTP</span></center>
+                            <span class="send-otp">Send OTP</span>
                             <div class="form-row">
                                 <label for="otp">OTP</label>
                                 <input type="tel" name="otp" id="otp" pattern="^\d{5}$" class="input-text" required>
@@ -273,7 +273,7 @@
       $('#eye1').click(function() {
           $('#eye1').toggleClass('fa-eye');
           $('#eye1').toggleClass('fa-eye-slash');
-          var input = $('#eye1').prev();
+          var input = $('#password1');
           if(input.attr('type') === 'password') {
               input.attr('type', 'text');
           }
@@ -284,7 +284,7 @@
       $('#eye2').click(function() {
           $('#eye2').toggleClass('fa-eye');
           $('#eye2').toggleClass('fa-eye-slash');
-          var input = $('#eye2').prev();
+          var input = $('#password2');
           if(input.attr('type') === 'password') {
               input.attr('type', 'text');
           }

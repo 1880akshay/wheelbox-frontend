@@ -140,11 +140,12 @@
 	margin-bottom: 20px;
 }
 #phone {
-    margin-bottom: -5px;
+    margin-bottom: 0px;
 }
 .send-otp {
     font-size: 11px;
     cursor: pointer;
+    float: right;
 }
 
 .form-icon {
