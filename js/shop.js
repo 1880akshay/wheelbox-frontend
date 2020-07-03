@@ -1,18 +1,18 @@
 var products = [
     {url: 'images/product-1.jpg', price: 200},
-    {url: 'images/product-2.jpg', price: 300},
-    {url: 'images/product-3.jpg', price: 400},
-    {url: 'images/product-4.jpg', price: 500},
-    {url: 'images/product-5.jpg', price: 600},
-    {url: 'images/product-6.jpg', price: 700},
+    {url: 'images/product-2.jpg', price: 500},
+    {url: 'images/product-3.jpg', price: 500},
+    {url: 'images/product-4.jpg', price: 900},
+    {url: 'images/product-5.jpg', price: 100},
+    {url: 'images/product-6.jpg', price: 800},
     {url: 'images/product-7.jpg', price: 800},
     {url: 'images/product-8.jpg', price: 900},
     {url: 'images/product-1.jpg', price: 1000},
-    {url: 'images/product-2.jpg', price: 1100},
-    {url: 'images/product-3.jpg', price: 1200},
+    {url: 'images/product-2.jpg', price: 100},
+    {url: 'images/product-3.jpg', price: 3200},
     {url: 'images/product-4.jpg', price: 1300},
-    {url: 'images/product-5.jpg', price: 1400},
-    {url: 'images/product-6.jpg', price: 1500},
+    {url: 'images/product-5.jpg', price: 1000},
+    {url: 'images/product-6.jpg', price: 900},
     {url: 'images/product-7.jpg', price: 1600},
     {url: 'images/product-8.jpg', price: 1700},
     {url: 'images/product-1.jpg', price: 1800},
@@ -20,7 +20,7 @@ var products = [
     {url: 'images/product-3.jpg', price: 2000},
     {url: 'images/product-4.jpg', price: 2100},
     {url: 'images/product-5.jpg', price: 2200},
-    {url: 'images/product-6.jpg', price: 2300},
+    {url: 'images/product-6.jpg', price: 2000},
     {url: 'images/product-7.jpg', price: 2400},
     {url: 'images/product-8.jpg', price: 2500},
     {url: 'images/product-1.jpg', price: 2600}
@@ -120,3 +120,17 @@ if(products.length < numOnOne) {
 for(var i=0; i<upper; i++) {
     addProduct(i, i);
 }
+
+/****sorting****/
+
+//high to low
+$('#h2l').click(function() {
+    products.sort((a, b) => (a.price < b.price) ? 1 : -1);
+    $('.block-27 ul li:eq(1)').click();
+});
+
+//low to high
+$('#l2h').click(function() {
+    products.sort((a, b) => (a.price > b.price) ? 1 : -1);
+    $('.block-27 ul li:eq(1)').click();
+});
