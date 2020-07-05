@@ -113,13 +113,13 @@
                             </div>
                             <div class="form-row">
                                 <label for="phone">PHONE NUMBER</label>
-                                <input type="tel" name="phone" id="phone" pattern="^\d{10}$" class="input-text" required>
+                                <input type="tel" name="phone" id="phone" pattern="^\d{10}$" class="input-text" >
                                 <i class="fa fa-phone form-icon"></i>
                             </div>
                             <span class="send-otp">Send OTP</span>
                             <div class="form-row">
                                 <label for="otp">OTP</label>
-                                <input type="tel" name="otp" id="otp" pattern="^\d{5}$" class="input-text" required>
+                                <input type="tel" name="otp" id="otp" pattern="^\d{5}$" class="input-text" >
                                 <i class="fa fa-key form-icon"></i>
                             </div>
                            
@@ -251,48 +251,8 @@
   <script src="js/scrollax.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
+  <script src="js/signup.js"></script>
   <script src="js/main.js"></script>
-
-  <script>
-      $('#login-head').click(function() {
-        $('.page-sign-up').fadeOut('fast', function() {
-            $('.page-login').fadeIn('fast');
-        });
-        
-        $('#sign-up-head').removeClass('head-active');
-        $('#login-head').addClass('head-active');
-      });
-      $('#sign-up-head').click(function() {
-        $('.page-login').fadeOut('fast', function() {
-            $('.page-sign-up').fadeIn('fast');
-        });
-        $('#sign-up-head').addClass('head-active');
-        $('#login-head').removeClass('head-active');
-      });
-
-      $('#eye1').click(function() {
-          $('#eye1').toggleClass('fa-eye');
-          $('#eye1').toggleClass('fa-eye-slash');
-          var input = $('#password1');
-          if(input.attr('type') === 'password') {
-              input.attr('type', 'text');
-          }
-          else {
-            input.attr('type', 'password');
-          }
-      });
-      $('#eye2').click(function() {
-          $('#eye2').toggleClass('fa-eye');
-          $('#eye2').toggleClass('fa-eye-slash');
-          var input = $('#password2');
-          if(input.attr('type') === 'password') {
-              input.attr('type', 'text');
-          }
-          else {
-            input.attr('type', 'password');
-          }
-      });
-  </script>
     
   </body>
 </html>
