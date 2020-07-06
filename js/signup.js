@@ -36,32 +36,3 @@ $('#login-head').click(function() {
         input.attr('type', 'password');
       }
   });
-
-
-$('#login-form').submit(function(event) {
-    event.preventDefault();
-
-    $.post('login/login', {
-        username: $('#username2').val(),
-        password: $('#password2').val()
-    }, (data) => {
-        $('#username2').val("");
-        $('#pasword2').val("");
-    });
-});
-
-$('#signup-form').submit(function(event) {
-    event.preventDefault();
-
-    $.post('login/signup', {
-        username: $('#username1').val(),
-        password: $('#password1').val(),
-        firstName: $('#first-name').val(),
-        lastName: $('#last-name').val()
-    }, (data) => {
-        $('#username1').val("");
-        $('#password1').val("");
-        $('#first-name').val("");
-        $('#last-name').val("");
-    });
-});

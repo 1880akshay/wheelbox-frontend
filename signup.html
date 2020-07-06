@@ -89,25 +89,25 @@
                         </div>
                     </center>
                     <div class="page-sign-up">
-                        <form action="#" method="post" id="signup-form">
+                        <form action="/login/signup" method="POST" id="signup-form">
                             <div class="form-row">
                                 <label for="first-name">FIRST NAME</label>
-                                <input type="text" name="first-name" id="first-name" class="input-text" required>
+                                <input type="text" name="firstName" id="first-name" class="input-text" required>
                                 <i class="fa fa-user-o form-icon"></i>
                             </div>
                             <div class="form-row">
                                 <label for="last-name">LAST NAME</label>
-                                <input type="text" name="last-name" id="last-name" class="input-text" required>
+                                <input type="text" name="lastName" id="last-name" class="input-text" required>
                                 <i class="fa fa-user-o form-icon"></i>
                             </div>
                             <div class="form-row">
                                 <label for="username1">USERNAME</label>
-                                <input type="text" name="username1" id="username1" class="input-text" required>
+                                <input type="text" name="username" id="username1" class="input-text" required>
                                 <i class="fa fa-user form-icon"></i>
                             </div>
                             <div class="form-row">
                                 <label for="password1">PASSWORD</label>
-                                <input type="password" name="password1" id="password1" class="input-text" required>
+                                <input type="password" name="password" id="password1" class="input-text" required>
                                 <i class="fa fa-lock form-icon"></i>
                                 <i class="fa fa-eye pass-eye" id="eye1"></i>
                             </div>
@@ -124,29 +124,29 @@
                             </div>
                            
                             <div class="form-row-last">
-                                <input type="submit" name="register" class="register btn btn-orange" value="Register">
+                                <input type="submit" class="register btn btn-orange" value="Register">
                                 
                             </div>
                         </form>
                     </div>
 
                     <div class="page-login">
-                        <form action="#" method="post" id="login-form">
+                        <form action="/login/login" method="POST" id="login-form">
                             <div class="form-row">
                                 <label for="username2">USERNAME</label>
-                                <input type="text" name="username2" id="username2" class="input-text" required>
+                                <input type="text" name="username" id="username2" class="input-text" required>
                                 <i class="fa fa-user form-icon"></i>
                             </div>
                             
                             <div class="form-row">
                                 <label for="password2">PASSWORD</label>
-                                <input type="password" name="password2" id="password2" class="input-text" required>
+                                <input type="password" name="password" id="password2" class="input-text" required>
                                 <i class="fa fa-lock form-icon"></i>
                                 <i class="fa fa-eye pass-eye" id="eye2"></i>
                             </div>
                             
                             <div class="form-row-last">
-                                <input type="submit" name="login" class="login btn btn-orange" value="Login">
+                                <input type="submit" class="login btn btn-orange" value="Login">
                                 
                             </div>
                         </form>
