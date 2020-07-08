@@ -8664,12 +8664,6 @@ h1, h2, h3, h4, h5,
       color: #fff; }
 
 
-@media (max-width: 991.98px) {
-  .video_div {
-    margin-top: 50px;
-  }
-}
-
 .img-2 {
   position: relative; }
   @media (max-width: 767.98px) {
@@ -9605,13 +9599,13 @@ textarea.form-control {
 .ftco-counter {
   padding: 5em 0; }
   .ftco-counter .text strong.number {
-    font-weight: 400;
+    font-weight: 600;
     font-size: 30px;
     color: #000000; }
   .ftco-counter .text span {
     display: block;
     font-size: 12px;
-    color: rgba(0, 0, 0, 0.7);
+    color: rgba(0, 0, 0, 0.9);
     text-transform: uppercase;
     letter-spacing: 1px; }
   @media (max-width: 767.98px) {
