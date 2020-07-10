@@ -5281,6 +5281,9 @@ button.bg-danger:focus {
 
 .bg-light {
   background-color: #f8f9fa !important; }
+  .bg-orange {
+    background-color: #ffa45c !important;
+  }
 
 a.bg-light:hover, a.bg-light:focus,
 button.bg-light:hover,
@@ -10256,5 +10259,104 @@ textarea.form-control {
 }
 .product-id {
   display: none;
+}
+
+/****partner form****/
+.partner-form {
+  padding: 40px 70px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.p-form-row {
+  margin: 20px 0;
+}
+.p-form-row label {
+  width: 100%;
+  font-size: 14px;
+  line-height: 1.8;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 0;
+}
+.p-form-row #p-check {
+  display: none;
+}
+.p-form-row .checkbox-custom {
+  display: block;
+  height: 18px;
+  width: 18px;
+  border: 1px solid #666;
+  cursor: pointer;
+  color: white;
+  text-align: center;
+  font-size: smaller;
+  padding-top: 2px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin-left: 5px;
+}
+.p-form-row .checkbox-custom:hover {
+  background-color: #e5e5e5;
+}
+.p-input-text {
+  width: 100%;
+  outline: none;
+  border: 2px solid transparent;
+  background-color: transparent;
+  border-bottom: 2px solid #e5e5e5;
+  padding: 0 22px;
+}
+.p-input-text:focus {
+  border-bottom-color: #2bb33e;
+}
+.p-input-text:focus:invalid {
+  border-bottom-color: red;
+}
+.partner-submit {
+  width: 100%;
+  padding: 15px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.agreement-text {
+  font-size: small;
+  line-height: 1.1;
+}
+.agreement-text a:hover {
+  text-decoration: underline;
+}
+.p-form-icon {
+  position: relative;
+  left: 0px;
+  top: -30px;
+  width: 20px;
+  height: 20px;
+}
+#check-error {
+  position: absolute;
+  padding-top: 6px;
+}
+#partner-img {
+  width: 100%;
+  padding-top: 18px;
+}
+@media (max-width: 600px) {
+  .partner-form {
+    padding: 40px 15px;
+  }
+}
+@media (max-width: 992px) and (min-width: 600px) {
+  #check-error {
+    padding-top: 0;
+  }
+}
+@media (max-width: 992px) {
+  #partner-img {
+    display: none;
+  }
 }
 
