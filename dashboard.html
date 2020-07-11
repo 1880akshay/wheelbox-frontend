@@ -51,7 +51,7 @@
     </div> -->
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light py-2" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="partner.html">Wheelbox Partners</a>
+	      <a class="navbar-brand" href="partner.html">Wheelbox</a>
 	      <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation" onclick="menutox()">
 	        <span class="oi oi-menu" id="menux" ></span>
 	      </button> -->
@@ -65,78 +65,137 @@
 			  
 			  
 	        </ul>
-	      </div> -->
+          </div> -->
+          <div id="dash-nav-icons">
+            <i class="fa fa-user"></i>
+            <i class="fa fa-bell"></i>
+            <i class="fa fa-cog"></i>
+        </div>
 	    </div>
       </nav>
-    <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-light ftco-navbar-light py-2" id="dashboard-nav">
+    <nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-light ftco-navbar-light" id="dashboard-nav">
         <div class="container">
             <a href="dashboard.html" id="dashboard-brand"><i class="fa fa-tachometer"></i> Dashboard</a>
-            <div id="dash-nav-icons">
-                <a href="#"><i class="fa fa-user"></i></a>
-                <a href="#"><i class="fa fa-bell"></i></a>
-                <a href="#"><i class="fa fa-cog"></i></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation" onclick="menutox()">
+                <span class="oi oi-menu text-orange" id="menux" ></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav ml-auto">
+                
+                <li class="nav-item"><div class="nav-link" data-toggle="modal" data-target="#bank-modal" >Update Bank Info</div></li>
+                <li class="nav-item"><div class="nav-link" data-toggle="modal" data-target="#tax-modal">Update Tax Info</div></li>
+                
+                
+                </ul>
             </div>
         </div>
     </nav>
     <!-- END nav -->
 
-    <section class="ftco-section bg-orange" style="padding: 3em 0;">
+
+    <!-----bank info modal-->
+    <div class="modal fade" id="bank-modal" tabindex="-1" role="dialog" aria-labelledby="title1" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <!-- <div class="modal-header">
+              <h5 class="modal-title" id="title1">UPDATE YOUR BANK INFO</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div> -->
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="partner-form dashboard-form">
+                    <h4 class="text-center update-head">UPDATE YOUR BANK INFO</h4>
+                    <form action="" method="POST">
+                        <div class="p-form-row">
+                            <label for="holderName">ACCOUNT HOLDER NAME</label>
+                            <input type="text" id="holderName" name="holderName" class="p-input-text" required>   
+                        </div>
+                        <div class="p-form-row">
+                            <label for="accNumber">ACCOUNT NUMBER</label>
+                            <input type="text" id="accNumber" name="accNumber" class="p-input-text" required>   
+                        </div>
+                        <div class="p-form-row">
+                            <label for="ifsc">IFSC CODE</label>
+                            <input type="text" id="ifsc" name="ifsc" class="p-input-text" required>   
+                        </div>
+                        <div class="p-form-row">
+                            <label for="accType" id="accType-label">ACCOUNT TYPE : </label>
+                            <select name="accType" id="accType" onchange="validate()" required>
+                                <option value="">Select</option>
+                                <option value="savings">Savings</option>
+                                <option value="current">Current</option>
+                            </select>
+                            <i class="fa fa-angle-down" id="arrow-down"></i>
+                            <i class="text-danger" id="acc-check"></i>
+                        </div>
+                        
+                        
+                        <div class="p-form-row">
+                            <input type="submit" value="Update" class="partner-submit btn btn-orange" onclick="validate()">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+    <!----tax info modal-->
+    <div class="modal fade" id="tax-modal" tabindex="-1" role="dialog" aria-labelledby="title2" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <!-- <div class="modal-header">
+              <h5 class="modal-title" id="title2">UPDATE YOUR BANK INFO</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div> -->
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="partner-form dashboard-form">
+                    <h4 class="text-center update-head">UPDATE YOUR TAX INFO</h4>
+                    <form action="" method="POST">
+                        <div class="p-form-row">
+                            <label for="gst">GST NUMBER</label>
+                            <input type="text" id="gst" name="gst" class="p-input-text" required>   
+                        </div>
+                        <div class="p-form-row">
+                            <label for="pan">PAN NUMBER</label>
+                            <input type="text" id="pan" name="pan" class="p-input-text" required>   
+                        </div>
+                        
+                        
+                        <div class="p-form-row">
+                            <input type="submit" value="Update" class="partner-submit btn btn-orange">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+    <section class="ftco-section bg-orange" style="padding: 8em 0;">
         <div class="container">
             
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="partner-form bg-light ftco-animate dashboard-form">
-                        <h4 class="text-center update-head">UPDATE YOUR BANK AND TAX INFO</h4>
-                        <form action="" method="POST">
-                            <div class="p-form-row">
-                                <label for="bankName">BANK</label>
-                                <input type="text" id="bankName" name="bankName" class="p-input-text" required>
-                            </div>
-                            <div class="p-form-row">
-                                <label for="holderName">ACCOUNT HOLDER NAME</label>
-                                <input type="text" id="holderName" name="holderName" class="p-input-text" required>   
-                            </div>
-                            <div class="p-form-row">
-                                <label for="accNumber">ACCOUNT NUMBER</label>
-                                <input type="tel" id="accNumber" name="accNumber" class="p-input-text" required>   
-                            </div>
-                            <div class="p-form-row">
-                                <label for="ifsc">IFSC CODE</label>
-                                <input type="text" id="ifsc" name="ifsc" class="p-input-text" required>   
-                            </div>
-                            <div class="p-form-row">
-                                <label for="accType" id="accType-label">ACCOUNT TYPE : </label>
-                                <select name="accType" id="accType" onchange="validate()" required>
-                                    <option value="">Select</option>
-                                    <option value="savings">Savings</option>
-                                    <option value="current">Current</option>
-                                </select>
-                                <i class="fa fa-angle-down" id="arrow-down"></i>
-                                <i class="text-danger" id="acc-check"></i>
-                            </div>
-                            <div class="p-form-row">
-                                <label for="tax">TAX</label>
-                                <input type="text" id="tax" name="tax" class="p-input-text" required>   
-                            </div>
-                            <div class="p-form-row">
-                                <label for="gst">GST NUMBER</label>
-                                <input type="text" id="gst" name="gst" class="p-input-text" required>   
-                            </div>
-                            <div class="p-form-row">
-                                <label for="pan">PAN NUMBER</label>
-                                <input type="text" id="pan" name="pan" class="p-input-text" required>   
-                            </div>
-                            
-                            <div class="p-form-row">
-                                <input type="submit" value="Update" class="partner-submit btn btn-orange" onclick="validate()">
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                
-            </div>
+            
         </div>
-        <br>
+        <br><br><br><br><br>
     </section>
     <footer class="ftco-footer bg-light ftco-section cat-sec">
       <div class="container">
