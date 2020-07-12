@@ -21,11 +21,12 @@
 
     <link rel="stylesheet" href="css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="css/jquery.timepicker.css">
-
     
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+    
+
   </head>
   <body class="goto-here">
 	<!-- <div class="py-1 bg-black">
@@ -82,16 +83,78 @@
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                
-                <li class="nav-item"><div class="nav-link" data-toggle="modal" data-target="#bank-modal" >Update Bank Info</div></li>
-                <li class="nav-item"><div class="nav-link" data-toggle="modal" data-target="#tax-modal">Update Tax Info</div></li>
-                
-                
+                    <li class="nav-item"><div class="nav-link" data-toggle="modal" data-target="#addProduct-modal" >Add Product</div></li>
+                    <li class="nav-item"><div class="nav-link" data-toggle="modal" data-target="#bank-modal" >Update Bank Info</div></li>
+                    <li class="nav-item"><div class="nav-link" data-toggle="modal" data-target="#tax-modal">Update Tax Info</div></li>
                 </ul>
             </div>
         </div>
     </nav>
     <!-- END nav -->
+
+    <!-----Add product modal-->
+    <div class="modal fade" id="addProduct-modal" tabindex="-1" role="dialog" aria-labelledby="title3" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <!-- <div class="modal-header">
+              <h5 class="modal-title" id="title3">UPDATE YOUR BANK INFO</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div> -->
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="partner-form dashboard-form">
+                    <h4 class="text-center update-head">ADD A NEW PRODUCT</h4>
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        <div class="p-form-row">
+                            <label for="prodName">PRODUCT NAME</label>
+                            <input type="text" id="prodName" name="prodName" class="p-input-text" required>   
+                        </div>
+                        <div class="p-form-row img-input mandatory">
+                            <center>
+                                <label for="mainImage"><div class="mi-button">Add Main Image</div></label>
+                                <i class="text-danger" id="img-check"></i>
+                                <input type="file" id="mainImage" name="mainImage" accept="image/*" onchange="readURL(this)" required>
+                                <div class="gallery" id="g1"></div>
+                            </center>
+                        </div>
+                        <div class="p-form-row img-input">
+                            <center>
+                                <label for="addImages"><div class="mi-button">Add Additional Images <span style="font-size: smaller;">(optional)</span></div></label>
+                                <input type="file" id="addImages" name="addImages" multiple accept="image/*" onchange="readURL2(this)">
+                                <div class="gallery" id="g2"></div>
+                            </center>
+                        </div>
+                        <div class="p-form-row">
+                            <label for="description">DESCRIPTION</label>
+                            <textarea id="description" rows="1" name="description" class="p-input-text" required></textarea>   
+                        </div>
+                        <div class="p-form-row">
+                            <label for="price">PRICE</label>
+                            <input type="number" id="price" name="price" class="p-input-text" required> 
+                            <i class="fa fa-inr input-logo"></i>  
+                        </div>
+                        <div class="p-form-row">
+                            <label for="taxCode">PRODUCT TAX CODE</label>
+                            <input type="text" id="taxCode" name="taxCode" class="p-input-text" required>   
+                        </div>
+                        
+                        <div class="p-form-row">
+                            <input type="submit" value="Add Product" class="partner-submit btn btn-orange" onclick="validate2()">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div> -->
+          </div>
+        </div>
+      </div>
 
 
     <!-----bank info modal-->
@@ -293,17 +356,8 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
 
-  <script>
-      function validate() {
-          if($('.p-form-row #accType').children('option:selected').val() === '') {
-            $('#acc-check').addClass('fa fa-exclamation-circle');
-          }
-          else {
-              $('#acc-check').removeClass('fa fa-exclamation-circle');
-          }
-      }
-  </script>
 
   </body>
 </html>

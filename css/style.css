@@ -10273,7 +10273,7 @@ textarea.form-control {
 .p-form-row {
   margin: 20px 0;
 }
-.p-form-row label {
+.p-form-row label:not(.mi-button) {
   width: 100%;
   font-size: 14px;
   line-height: 1.8;
@@ -10406,7 +10406,7 @@ textarea.form-control {
   color: #ffa45c;
 }
 .dashboard-form input:not(.partner-submit) {
-  padding: 0 5px;
+  padding: 0 10px;
 }
 #dashboard-nav .navbar-collapse .nav-link {
   color: #ffa45c !important;
@@ -10427,4 +10427,50 @@ h5.modal-title {
   top: 20px;
   outline: none;
 }
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
 
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.p-form-row .button {
+  width: 50%;
+}
+#mainImage, #addImages {
+  display: none;
+}
+.mi-button {
+  width: 50%;
+  padding: 10px;
+  border: 1px solid #666;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  background-color: lightgrey;
+}
+
+.img-input {
+  border: 2px dashed #666;
+  border-radius: 5px;
+  padding: 10px;
+}
+.gallery {
+  padding: 10px;
+  display: none;
+}
+#g1 img {
+  width: 50%;
+}
+#g2 img {
+  width: 30%;
+  margin: 5px;
+}
+.p-form-row .input-logo {
+  position: relative;
+  left: 0;
+  bottom: 27px;
+}
