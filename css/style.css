@@ -10497,7 +10497,8 @@ input[type=number] {
 .cart-select-size {
   text-transform: uppercase;
   width: 90% !important;
-  text-align: center;
+  text-align: center !important;
+  background-color: transparent;
   padding: 4px;
   border-radius: 8px;
   border: 1px solid #666;
