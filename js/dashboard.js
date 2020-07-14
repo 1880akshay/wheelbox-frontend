@@ -56,3 +56,43 @@ function readURL2(input) {
         $('.gallery#g2').empty().hide();
     }
 }
+
+/*********api calls start form here********/
+
+$.get('/product/getCategories', (categories) => {
+    for(var i=0; i<categories.length; i++) {
+        $('select#category').append('<option value="'+ categories[i].id +'">'+ categories[i].value +'</option>');
+    }
+});
+
+$('select#category').change(function() {
+    if($('select#category option:selected').val() !== '') {
+        $.get('/product/getFeatures', {categoryId: Number($('select#category option:selected').val())}, (features) => {
+            for(var i=0; i<features.length; i++) {
+                $('.show-on-api-call').append('<div class="p-form-row"><label for="'+ features[i].value +'" class="add-dropdown-labels">'+ features[i].value + '</label><select name="'+ features[i].value +'" id="'+ features[i].value +'" class="add-dropdowns" required><option value="">Select</option></select><i class="fa fa-angle-down" id="arrow-down"></i></div>');
+                $.get('/product/getFeatureOptions', {featureId: features[i].id}, (featureOptions) => {
+                   for(var j=0; j<featureOptions.length; j++) {
+                    $('.show-on-api-call select#'+features[i].value).append('<option value="'+ featureOptions[j].id +'">'+ featureOptions[j].value +'</option>');
+                   }
+                });
+            }
+        });
+        
+        $('.show-on-api-call').fadeIn('fast');
+    }
+    else {
+        $('.show-on-api-call').fadeOut('fast');
+    }
+});
+
+$.get('/product/getBrands', (brands) => {
+    for(var i=0; i<brands.length; i++) {
+        $('.p-form-row select#brand').append('<option value="'+ brands[i].id +'">'+ brands[i].value +'</option>');
+    }
+});
+
+$.get('/product/getPTCs', (ptc) => {
+    for(var i=0; i<ptc.length; i++) {
+        $('.p-form-row select#ptc').append('<option value="'+ ptc[i].id +'">'+ ptc[i].value +'</option>');
+    }
+})
