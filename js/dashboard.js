@@ -20,6 +20,7 @@ function validate2() {
 
 function readURL(input) {
     if (input.files) {
+        //console.log(input.files.item(0).name);
         var reader = new FileReader();
 
         reader.onload = function (e) {
@@ -67,7 +68,7 @@ $.get('/product/getCategories', (categories) => {
 
 $('select#category').change(function() {
     if($('select#category option:selected').val() !== '') {
-        $.get('/product/getFeatures', {categoryId: Number($('select#category option:selected').val())}, (features) => {
+        $.get('/product/getFeatures', {categoryId: parseInt($('select#category option:selected').val())}, (features) => {
             for(var i=0; i<features.length; i++) {
                 $('.show-on-api-call').append('<div class="p-form-row"><label for="'+ features[i].value +'" class="add-dropdown-labels">'+ features[i].value + ' : </label><select name="'+ features[i].value +'" id="'+ features[i].value +'" class="add-dropdowns" required><option value="">Select</option></select><i class="fa fa-angle-down" id="arrow-down"></i></div>');
                 $.get('/product/getFeatureOptions', {featureId: features[i].id}, (featureOptions) => {
@@ -95,4 +96,44 @@ $.get('/product/getPTCs', (ptc) => {
     for(var i=0; i<ptc.length; i++) {
         $('.p-form-row select#ptc').append('<option value="'+ ptc[i].id +'">'+ ptc[i].value +'</option>');
     }
-})
+});
+
+$('.add-product-form').submit(function(event) {
+    event.preventDefault();
+
+    var product = new FormData();
+
+    product.append('name', $(this).find('#prodName').val());
+    product.append('description', $(this).find('#description').val());
+    product.append('price', Number($(this).find('#price').val()));
+    product.append('categoryId',  parseInt($(this).find('select#category option:selected').val()));
+    product.append('brandId', parseInt($(this).find('select#brand option:selected').val()));
+    product.append('PTCId', parseInt($(this).find('select#ptc option:selected').val()));
+    product.append('image', $('#mainImage').get(0).files[0]);
+
+    var featureOptions = [];
+
+    for(var i=0; i<$('.show-on-api-call select').length; i++) {
+        var featureId = parseInt($('.show-on-api-call select:eq('+i+') option:selected').val());
+        featureOptions.push(featureId);
+    }
+
+    product.append('featureOptions', featureOptions);
+
+    var moreImages = [];
+
+    for(var i=0; i<$('#addImages').get(0).files.length; i++) {
+        moreImages.push($('#addImages').get(0).files[i]);
+    }
+
+    product.append('moreImages', moreImages);
+
+    $.post('/product/createProduct', product, (data)=> {
+        if(typeof data === 'string' && data.startsWith('Error')) {
+            alert('An error occured. Please Try again!');
+        }
+        else if(typeof data === 'object') {
+            alert('Product added successfully!');
+        }
+    });
+});
