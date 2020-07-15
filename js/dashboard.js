@@ -56,6 +56,7 @@ function readURL2(input) {
     else {
         $('.gallery#g2').empty().hide();
     }
+    
 }
 
 /*********api calls start form here********/
@@ -111,29 +112,36 @@ $('.add-product-form').submit(function(event) {
     product.append('PTCId', parseInt($(this).find('select#ptc option:selected').val()));
     product.append('image', $('#mainImage').get(0).files[0]);
 
-    var featureOptions = [];
-
     for(var i=0; i<$('.show-on-api-call select').length; i++) {
         var featureId = parseInt($('.show-on-api-call select:eq('+i+') option:selected').val());
-        featureOptions.push(featureId);
+        product.append('featureOptions', featureId);
     }
-
-    product.append('featureOptions', featureOptions);
-
-    var moreImages = [];
 
     for(var i=0; i<$('#addImages').get(0).files.length; i++) {
-        moreImages.push($('#addImages').get(0).files[i]);
+       product.append('moreImages', $('#addImages').get(0).files[i]);
     }
 
-    product.append('moreImages', moreImages);
-
-    $.post('/product/createProduct', product, (data)=> {
+    /* $.post('/product/createProduct', product, (data)=> {
         if(typeof data === 'string' && data.startsWith('Error')) {
             alert('An error occured. Please Try again!');
         }
         else if(typeof data === 'object') {
             alert('Product added successfully!');
         }
-    });
+    }); */
+    $.ajax({
+        type: 'POST',
+        url: '/product/createProduct',
+        data: product,
+        success: function(data) {
+            if(typeof data === 'string' && data.startsWith('Error')) {
+                alert('An error occured. Please Try again!');
+            }
+            else if(typeof data === 'object') {
+                alert('Product added successfully!');
+            }
+        },
+        processData: false,
+		contentType: false
+    })
 });
