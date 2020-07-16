@@ -20,7 +20,6 @@ function validate2() {
 
 function readURL(input) {
     if (input.files) {
-        //console.log(input.files.item(0).name);
         var reader = new FileReader();
 
         reader.onload = function (e) {
@@ -121,14 +120,6 @@ $('.add-product-form').submit(function(event) {
        product.append('moreImages', $('#addImages').get(0).files[i]);
     }
 
-    /* $.post('/product/createProduct', product, (data)=> {
-        if(typeof data === 'string' && data.startsWith('Error')) {
-            alert('An error occured. Please Try again!');
-        }
-        else if(typeof data === 'object') {
-            alert('Product added successfully!');
-        }
-    }); */
     $.ajax({
         type: 'POST',
         url: '/product/createProduct',
