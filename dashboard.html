@@ -113,7 +113,7 @@
                             <label for="prodName">PRODUCT NAME</label>
                             <input type="text" id="prodName" name="prodName" class="p-input-text" required>   
                         </div>
-                        <div class="p-form-row img-input mandatory">
+                        <div class="p-form-row img-input mandatory1">
                             <center>
                                 <label for="mainImage"><div class="mi-button">Add Main Image</div></label>
                                 <i class="text-danger" id="img-check"></i>
@@ -121,10 +121,11 @@
                                 <div class="gallery" id="g1"></div>
                             </center>
                         </div>
-                        <div class="p-form-row img-input">
+                        <div class="p-form-row img-input mandatory2">
                             <center>
-                                <label for="addImages"><div class="mi-button">Add Additional Images <span style="font-size: smaller;">(optional)</span></div></label>
-                                <input type="file" id="addImages" name="addImages" multiple accept="image/*" onchange="readURL2(this)">
+                                <label for="addImages"><div class="mi-button">Add Additional Images</div></label>
+                                <i class="text-danger" id="img-check2"></i>
+                                <input type="file" id="addImages" name="addImages" multiple accept="image/*" onchange="readURL2(this)" required>
                                 <div class="gallery" id="g2"></div>
                             </center>
                         </div>
@@ -134,7 +135,7 @@
                         </div>
                         <div class="p-form-row">
                             <label for="price">PRICE</label>
-                            <input type="number" id="price" name="price" class="p-input-text" required> 
+                            <input type="tel" id="price" name="price" pattern="^[0-9]*$" class="p-input-text" required> 
                             <i class="fa fa-inr input-logo"></i>  
                         </div>
                         <div class="p-form-row">

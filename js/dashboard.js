@@ -10,11 +10,19 @@ function validate() {
 function validate2() {
     if($('#mainImage').get(0).files.length === 0) {
         $('#img-check').addClass('fa fa-exclamation-circle');
-        $('.img-input.mandatory').css('border', '2px dashed red');
+        $('.img-input.mandatory1').css('border', '2px dashed red');
     }
     else {
         $('#img-check').removeClass('fa fa-exclamation-circle');
-        $('.img-input.mandatory').css('border', '2px dashed #666');
+        $('.img-input.mandatory1').css('border', '2px dashed #666');
+    }
+    if($('#addImages').get(0).files.length === 0) {
+        $('#img-check2').addClass('fa fa-exclamation-circle');
+        $('.img-input.mandatory2').css('border', '2px dashed red');
+    }
+    else {
+        $('#img-check2').removeClass('fa fa-exclamation-circle');
+        $('.img-input.mandatory2').css('border', '2px dashed #666');
     }
 }
 
@@ -35,7 +43,14 @@ function readURL(input) {
     else {
         $('.gallery#g1').empty().hide();
     }
-    validate2();
+    if($('#mainImage').get(0).files.length === 0) {
+        $('#img-check').addClass('fa fa-exclamation-circle');
+        $('.img-input.mandatory1').css('border', '2px dashed red');
+    }
+    else {
+        $('#img-check').removeClass('fa fa-exclamation-circle');
+        $('.img-input.mandatory1').css('border', '2px dashed #666');
+    }
 }
 function readURL2(input) {
     if (input.files) {
@@ -55,7 +70,14 @@ function readURL2(input) {
     else {
         $('.gallery#g2').empty().hide();
     }
-    
+    if($('#addImages').get(0).files.length === 0) {
+        $('#img-check2').addClass('fa fa-exclamation-circle');
+        $('.img-input.mandatory2').css('border', '2px dashed red');
+    }
+    else {
+        $('#img-check2').removeClass('fa fa-exclamation-circle');
+        $('.img-input.mandatory2').css('border', '2px dashed #666');
+    }
 }
 
 /*********api calls start form here********/
@@ -101,38 +123,71 @@ $.get('/product/getPTCs', (ptc) => {
 $('.add-product-form').submit(function(event) {
     event.preventDefault();
 
-    var product = new FormData();
+    var mainImage = new FormData();
+    mainImage.append('image', $('#mainImage').get(0).files[0]);
 
-    product.append('name', $(this).find('#prodName').val());
-    product.append('description', $(this).find('#description').val());
-    product.append('price', Number($(this).find('#price').val()));
-    product.append('categoryId',  parseInt($(this).find('select#category option:selected').val()));
-    product.append('brandId', parseInt($(this).find('select#brand option:selected').val()));
-    product.append('PTCId', parseInt($(this).find('select#ptc option:selected').val()));
-    product.append('image', $('#mainImage').get(0).files[0]);
-
-    for(var i=0; i<$('.show-on-api-call select').length; i++) {
-        var featureId = parseInt($('.show-on-api-call select:eq('+i+') option:selected').val());
-        product.append('featureOptions', featureId);
-    }
-
+    var moreImages = new FormData();
     for(var i=0; i<$('#addImages').get(0).files.length; i++) {
-       product.append('moreImages', $('#addImages').get(0).files[i]);
+        product.append('moreImages', $('#addImages').get(0).files[i]);
     }
 
     $.ajax({
         type: 'POST',
-        url: '/product/createProduct',
-        data: product,
-        success: function(data) {
-            if(typeof data === 'string' && data.startsWith('Error')) {
-                alert('An error occured. Please Try again!');
-            }
-            else if(typeof data === 'object') {
-                alert('Product added successfully!');
-            }
-        },
+        url: '/product/uploadImages',
+        data: mainImage,
         processData: false,
-		contentType: false
+		contentType: false,
+        success: function(data1) {
+            if(data1 === 'Please try again' || data1 === 'No files selected') {
+                alert(data1);
+            }
+            else {
+                $.ajax({
+                    type: 'POST', 
+                    url: '/product/uploadImages',
+                    data: moreImages,
+                    processData: false,
+		            contentType: false,
+                    success: function(data2) {
+                        if(data2 === 'Please try again' || data2 === 'No files selected') {
+                            alert(data2)
+                        }
+                        else {
+                            var product = new FormData();
+                            product.append('name', $('#prodName').val());
+                            product.append('description', $('#description').val());
+                            product.append('price', Number($('#price').val()));
+                            product.append('categoryId',  parseInt($('select#category option:selected').val()));
+                            product.append('brandId', parseInt($('select#brand option:selected').val()));
+                            product.append('PTCId', parseInt($('select#ptc option:selected').val()));
+                            product.append('image', data1[0]);
+                            for(var i=0; i<data2.length; i++) {
+                                product.append('moreImages', data2[i]);
+                            }
+                            for(var i=0; i<$('.show-on-api-call select').length; i++) {
+                                var featureId = parseInt($('.show-on-api-call select:eq('+i+') option:selected').val());
+                                product.append('featureOptions', featureId);
+                            }
+                    
+                            $.ajax({
+                                type: 'POST', 
+                                url: '/product/createProduct',
+                                data: product,
+                                processData: false,
+                                contentType: false,
+                                success: function(data) {
+                                    if(typeof data === 'string' && data.startsWith('Error')) {
+                                        alert('An error occured. Please Try again!');
+                                    }
+                                    else if(typeof data === 'object') {
+                                        if(!alert('Product added successfully!')) window.location.reload();
+                                    }
+                                }
+                            })
+                        }
+                    }
+                })
+            }
+        }
     })
 });
