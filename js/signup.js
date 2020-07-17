@@ -36,3 +36,81 @@ $('#login-head').click(function() {
         input.attr('type', 'password');
       }
   });
+
+$('.form-row #phone').change(function() {
+  var phone = document.getElementById('phone');
+  if(phone.checkValidity()) {
+    $('.send-otp').css('cursor', 'pointer');
+  }
+  else {
+    $('.send-otp').css('cursor', 'not-allowed');
+  }
+})
+$('.send-otp').hover(function(){
+  if(phone.checkValidity()) {
+    $('.send-otp').css('text-decoration', 'underline');
+  }
+}, function() {
+  if(phone.checkValidity()) {
+    $('.send-otp').css('text-decoration', 'none');
+  }
+})
+
+/******api calls****/
+
+$('.send-otp').click(function() {
+  var phone = document.getElementById('phone');
+  if(phone.checkValidity()) {
+    $.post('/login/sendOTP', {phoneNumber: Number($('.form-row #phone').val())}, (data) => {
+      if(data.type === 'success') {
+        alert("OTP sent successfully!");
+      }
+      else if(data.type === 'error') {
+        alert('An error occurred! Please try again');
+      }
+      $('.resend-otp').fadeIn();
+    })
+  }
+})
+
+$('.resend-otp').click(function() {
+  var phone = document.getElementById('phone');
+  if(phone.checkValidity()) {
+    $.post('/login/resendOTP', {phoneNumber: Number($('.form-row #phone').val())}, (data) => {
+      if(data.type === 'success') {
+        alert('OTP sent successfully!');
+      }
+      else if(data.type === 'error') {
+        alert('An error occurred! Please try again');
+      }
+    })
+  }
+})
+
+$('.page-sign-up #signup-form').submit(function(event) {
+  event.preventDefault();
+  $.post('/login/verifyOTP', {phoneNumber: Number($('.form-row #phone').val()), otp: Number($('.form-row #otp').val())}, (data) => {
+    if(data.type === 'success') {
+
+      var credentials = {
+        username: $('.form-row #username1').val(),
+        password: $('.form-row #password1').val(),
+        firstName: $('.form-row #first-name').val(),
+        lastName: $('.form-row #last-name').val(),
+        mainPhoneNumber: Number($('.form-row #phone').val()),
+        mainEmail: $('.form-row #email').val()
+      }
+      $.post('/login/signup', credentials, (user) => {
+        if(typeof user === 'object') {
+          if(!alert('Registered successfully! Login to continue')) window.location.reload(true);
+        }
+        else {
+          if(!alert('An error occurred! Please try again')) window.location.reload(true);
+        }
+      })
+    }
+    else if(data.type === 'error') {
+      if(!alert('Verification failed! Please try again')) window.location.reload(true);
+    }
+  })
+})

@@ -65,7 +65,7 @@
 }
 .form-v7-content .form-detail {
     padding: 73px 80px 10px;
-    height: 680px;
+    height: 725px;
 	position: relative;
 	width: 100%;
     -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -142,10 +142,18 @@
 #phone {
     margin-bottom: 0px;
 }
-.send-otp {
+.send-otp, .resend-otp {
     font-size: 11px;
-    cursor: pointer;
+    cursor: not-allowed;
     float: right;
+    margin-left: 10px;
+}
+.resend-otp {
+    cursor: pointer;
+    display: none;
+}
+.resend-otp:hover {
+    text-decoration: underline;
 }
 
 .form-icon {
@@ -153,9 +161,7 @@
     left: 0;
     top: 33px;
 }
-.send-otp:hover {
-    text-decoration: underline;
-}
+
 .form-v7-content .form-detail input {
 	width: 100%;
     padding: 1px 15px 1px 15px;
@@ -225,7 +231,7 @@
 }
 
 .login-signup {
-    margin-top: -30px;
+    margin-top: -50px;
     margin-bottom: 30px;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -263,7 +269,7 @@
 		margin-bottom: -5px;
 	}
 	.form-v7-content .form-detail {
-		padding: 50px;
+		padding: 20px 50px;
 	    width: auto;
 	}
 	.form-v7-content .form-detail .register {
