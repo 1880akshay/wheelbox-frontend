@@ -105,12 +105,12 @@ $('.page-sign-up #signup-form').submit(function(event) {
           if(!alert('Registered successfully! Login to continue')) window.location.reload(true);
         }
         else {
-          if(!alert('An error occurred! Please try again')) window.location.reload(true);
+          alert('An error occurred! Please try again');
         }
       })
     }
     else if(data.type === 'error') {
-      if(!alert('Verification failed! Please try again')) window.location.reload(true);
+      alert('Verification failed! Please try again');
     }
   })
 })

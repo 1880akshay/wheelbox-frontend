@@ -180,7 +180,7 @@ $('.add-product-form').submit(function(event) {
                                         alert('An error occured. Please Try again!');
                                     }
                                     else if(typeof data === 'object') {
-                                        if(!alert('Product added successfully!')) window.location.reload();
+                                        if(!alert('Product added successfully!')) window.location.reload(true);
                                     }
                                 }
                             })
@@ -191,3 +191,36 @@ $('.add-product-form').submit(function(event) {
         }
     })
 });
+
+$('.bank-info-form').submit(function(event) {
+    event.preventDefault();
+
+    var bankInfo = {
+        name: $('.p-form-row #holderName').val(),
+        number: $('.p-form-row #accNumber').val(),
+        type: $('.p-form-row #accType option:selected').val(),
+        IFSC: $('.p-form-row #ifsc').val()
+    }
+
+    $.post('partner/updateBank', bankInfo, (data) => {
+        if(typeof data === 'string' && data.startsWith('Error')) {
+            alert('An error occurred! Please try again');
+        }
+        else {
+            if(!alert('Updated successfully!')) window.location.reload(true);
+        }
+    });
+});
+
+$('.tax-info-form').submit(function(event) {
+    event.preventDefault();
+
+    $.post('/partner/updateTax', {PAN: $('.p-form-row #pan').val(), GST: $('.p-form-row #gst').val()}, (data) => {
+        if(typeof data === 'string' && data.startsWith('Error')) {
+            alert('An error occurred! Please try again');
+        }
+        else {
+            if(!alert('Updated successfully!')) window.location.reload(true);
+        }
+    })
+})

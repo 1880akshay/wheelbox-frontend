@@ -244,6 +244,17 @@
           }
       }
 
+      $('.partner-form form').submit(function(event) {
+        event.preventDefault();
+        $.post('partner/createPartner', {shopName: $('#shopName').val(), companyName: $('#companyName').val()}, (data) => {
+          if(typeof data === 'string' && data.startsWith('Error')) {
+            alert('An error occurred! Please try again');
+          }
+          else {
+            if(!alert('Success!')) window.location.href = 'dashboard.html';
+          }
+        })
+      })
   </script>
     
   </body>
