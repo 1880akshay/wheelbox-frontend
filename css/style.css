@@ -9977,7 +9977,7 @@ textarea.form-control {
   cursor: pointer;
 }
   .sidebar-box-2 .heading {
-    font-size: 15px;
+    font-size: 13px;
     text-transform: uppercase; }
     .sidebar-box-2 .heading a {
       color: #000000; }
@@ -9985,7 +9985,7 @@ textarea.form-control {
     margin: 0;
     padding: 0; }
     .sidebar-box-2 ul li {
-      font-size: 12px;
+      font-size: 11px;
       list-style: none;
       margin-bottom: 10px; }
       .sidebar-box-2 ul li a {
@@ -10225,6 +10225,13 @@ textarea.form-control {
 .side-drop {
   display: none;
 }
+.side-drop li {
+  color: black;
+}
+.side-drop li input, .side-drop li label {
+  vertical-align: middle;
+  margin-bottom: 0;
+}
 @media (max-width: 768px) {
   .pagination-row {
     margin-bottom: 40px;
@@ -10261,6 +10268,40 @@ textarea.form-control {
 }
 .product-id {
   display: none;
+}
+.filter-options-hide {
+  display: none;
+}
+@media (min-width: 760px) {
+  #filter-btn {
+    display: none;
+  }
+}
+@media (max-width: 760px) {
+  .sidebar.filter-options {
+    display: none;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background-color: black;
+    padding-top: 50px;
+  }
+  .sidebar.filter-options h4, .sidebar.filter-options h2, .sidebar.filter-options li {
+    color: white !important;
+  }
+  .sidebar.filter-options hr {
+    background-color: gray;
+  }
+  .filter-options-hide {
+    display: block;
+    float: right;
+    color: white;
+    margin-top: -35px;
+    cursor: pointer;
+  }
 }
 
 /****partner form****/
