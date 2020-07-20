@@ -95,12 +95,12 @@
 
     <section class="ftco-section bg-light" style="padding-top: 2em;">
     	<div class="container">
-			<div class="row" style="margin-bottom: 2em;"> 
-				<div class="col-md-10"></div>
-				<div class="col-md-2">
-					<button class="sort-filter" title="Filter" id="filter-btn"><i class="fa fa-filter"></i></button>
+			<div class="row" style="margin-bottom: 2em;">
+				<div class="col-md-4 col-lg-2"></div>
+				<div class="col-md-8 col-lg-10">
+					<button class="sort-filter" title="Filter" id="filter-btn"><i class="fa fa-filter"></i>&nbsp; Filters</button>
 					<div class="dropdown">
-						<button class="sort-filter" type="button" data-toggle="dropdown" title="Sort"><i class="fa fa-sort"></i></button>
+						<button class="sort-filter" type="button" data-toggle="dropdown" title="Sort"><i class="fa fa-sort"></i>&nbsp; <span class="sort-method-selected">Sort By:</span></button>
 						<ul class="dropdown-menu dropdown-menu-right" id="sort-list">
 							<li id="sort-by">Sort By:</li>
 							<!-- <li><a href="#">Most Relevant</a></li>
@@ -110,6 +110,10 @@
 							<li><a href="#" id="l2h">Price: Low to High</a></li>
 							<hr style="margin: 0;">
 							<li><a href="#" id="h2l">Price: High to Low</a></li>
+							<hr style="margin: 0;">
+							<li><a href="#" id="a2z">Title: A to Z</a></li>
+							<hr style="margin: 0;">
+							<li><a href="#" id="z2a">Title: Z to A</a></li>
 						</ul>
 					</div>
 					
@@ -121,11 +125,11 @@
 					<h4>SHOP BY</h4><hr style="margin-top: 0px;">
 		    		<!-- <div class="sidebar-box-2">
 						<h2 class="heading mb-2 side-categories">Color<span style="float: right;">+</span></h2>
-						<hr style="margin-top: 0px;">
 		    			<ul class="side-drop">
 							<li><input type="checkbox" id="red">&emsp;<label for="red">Red</label></li>
 							<li><input type="checkbox" id="red">&emsp;<label for="red">Red</label></li>
-		    			</ul>
+						</ul>
+						<hr style="margin-top: 0px;">
 		    		</div> -->
 		    		
 					
@@ -251,7 +255,7 @@
 
   <script>
 	  $('.side-categories').click(function() {
-		$(this).next().next().slideToggle('fast');
+		$(this).next().slideToggle('fast');
 		if($(this).find('span').html() === '-') {
 			$(this).find('span').html('+');
 		}
