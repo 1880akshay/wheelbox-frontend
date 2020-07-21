@@ -10782,3 +10782,6 @@ span.icon-shopping_cart {
 .search-overlay-class button:hover {
   color: #ffa45c;
 }
+.login-different-text {
+  display: none;
+}

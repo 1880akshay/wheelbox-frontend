@@ -5,6 +5,9 @@ $('#login-head').click(function() {
     
     $('#sign-up-head').removeClass('head-active');
     $('#login-head').addClass('head-active');
+    $('.signup-different-text').fadeOut('fast', function() {
+      $('.login-different-text').fadeIn('fast');
+    });
   });
   $('#sign-up-head').click(function() {
     $('.page-login').fadeOut('fast', function() {
@@ -12,6 +15,9 @@ $('#login-head').click(function() {
     });
     $('#sign-up-head').addClass('head-active');
     $('#login-head').removeClass('head-active');
+    $('.login-different-text').fadeOut('fast', function() {
+      $('.signup-different-text').fadeIn('fast');
+    });
   });
 
   $('#eye1').click(function() {
