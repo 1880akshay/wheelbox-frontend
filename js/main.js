@@ -66,6 +66,7 @@
 		}
 	})
 
+
 	// Scrollax
    $.Scrollax();
 
@@ -438,5 +439,13 @@ function menutox() {
 		menu.removeClass('oi-x');
 		menu.addClass('oi-menu');
 	}
+}
+
+//search bar in navbar
+function openSearch() {
+	$('#search-overlay-id').fadeIn('fast');
+}
+function closeSearch() {
+	$('#search-overlay-id').fadeOut('fast');
 }
 

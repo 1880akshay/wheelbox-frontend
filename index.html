@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
@@ -47,16 +48,25 @@
 			    </div>
 		    </div>
 		  </div>
-    </div> -->
+	</div> -->
+	<div id="search-overlay-id" class="search-overlay-class">
+		<span class="search-closebtn" onclick="closeSearch()" title="Close">&times;</span>
+		<div class="search-overlay-content">
+			<input type="text" placeholder="Search...">
+			<button type="submit"><i class="fa fa-search"></i></button>
+		</div>
+	</div>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Wheelbox</a>
+		  <a class="navbar-brand" href="index.html">Wheelbox</a>
+		  <i class="fa fa-search nav-search-button-mobile" onclick="openSearch()"></i>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation" onclick="menutox()">
 	        <span class="oi oi-menu" id="menux" ></span>
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
+			  <li class="nav-item nav-search-button" onclick="openSearch()"><div class="nav-link"><i class="fa fa-search"></i></div></li>
 	          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
 	          <li class="nav-item dropdown" style="cursor: pointer;">
               <div class="nav-link dropdown-toggle" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</div>
@@ -68,12 +78,12 @@
 				<a class="dropdown-item" href="shop.html">Bath</a>
 				<a class="dropdown-item" href="shop.html">Rugs</a> -->
               </div>
-            </li>
+              </li>
 	          
 	          <li class="nav-item"><a href="partner.html" class="nav-link">Partners</a></li>
 			  <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
 			  <li class="nav-item"><a href="signup.html" class="nav-link">Login/ Sign Up</a></li>
-			  <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+			  <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span class="icon-shopping_cart"></span><span class="cart-bubble-quantity" style="color: black !important;">0</span></a></li>
 			  
 	        </ul>
 	      </div>
@@ -208,7 +218,7 @@
 							<div class="text py-3 px-3">
 								<h3 class="categories-head"><a href="#">BED ELEMENTS</a></h3>
 								
-								<p class="bottom-area d-flex px-3">
+								<p class="bottom-area d-flex px-3 categories-shop-btn">
 									<a href="#" class="add-to-cart text-center py-2 mr-1"><span>SHOP&emsp;<i class="ion-ios-arrow-forward ml-1"></i></span></a>
 									<!-- <a href="#" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a> -->
 								</p>
@@ -223,7 +233,7 @@
 							<div class="text py-3 px-3">
 								<h3 class="categories-head"><a href="#">BATH</a></h3>
 								
-								<p class="bottom-area d-flex px-3">
+								<p class="bottom-area d-flex px-3 categories-shop-btn">
 									<a href="#" class="add-to-cart text-center py-2 mr-1"><span>SHOP&emsp;<i class="ion-ios-arrow-forward ml-1"></i></span></a>
 									<!-- <a href="#" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a> -->
 								</p>
@@ -238,7 +248,7 @@
 							<div class="text py-3 px-3">
 								<h3 class="categories-head"><a href="#">READY MADE CURTAINS</a></h3>
 								
-								<p class="bottom-area d-flex px-3">
+								<p class="bottom-area d-flex px-3 categories-shop-btn">
 									<a href="#" class="add-to-cart text-center py-2 mr-1"><span>SHOP&emsp;<i class="ion-ios-arrow-forward ml-1"></i></span></a>
 									<!-- <a href="#" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a> -->
 								</p>
@@ -253,7 +263,7 @@
 							<div class="text py-3 px-3">
 								<h3 class="categories-head"><a href="#">CUSHIONS</a></h3>
 								
-								<p class="bottom-area d-flex px-3">
+								<p class="bottom-area d-flex px-3 categories-shop-btn">
 									<a href="#" class="add-to-cart text-center py-2 mr-1"><span>SHOP&emsp;<i class="ion-ios-arrow-forward ml-1"></i></span></a>
 									<!-- <a href="#" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a> -->
 								</p>
@@ -268,7 +278,7 @@
 							<div class="text py-3 px-3">
 								<h3 class="categories-head"><a href="#">BEDDING</a></h3>
 								
-								<p class="bottom-area d-flex px-3">
+								<p class="bottom-area d-flex px-3 categories-shop-btn">
 									<a href="#" class="add-to-cart text-center py-2 mr-1"><span>SHOP&emsp;<i class="ion-ios-arrow-forward ml-1"></i></span></a>
 									<!-- <a href="#" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a> -->
 								</p>
@@ -283,7 +293,7 @@
 							<div class="text py-3 px-3">
 								<h3 class="categories-head"><a href="#">RUGS</a></h3>
 								
-								<p class="bottom-area d-flex px-3">
+								<p class="bottom-area d-flex px-3 categories-shop-btn">
 									<a href="#" class="add-to-cart text-center py-2 mr-1"><span>SHOP&emsp;<i class="ion-ios-arrow-forward ml-1"></i></span></a>
 									<!-- <a href="#" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a> -->
 								</p>
@@ -339,14 +349,13 @@
     			<div class="col-6 col-lg-3 ftco-animate">
     				<div class="product bg-white">
     					<a href="#" class="img-prod"><img class="img-fluid" src="images/curtain.jpg" >
-    						<span class="status">30%</span>
     						<div class="overlay"></div>
     					</a>
     					<div class="text py-3 px-3">
     						<h3><a href="#">Product Name</a></h3>
     						<div class="d-flex">
     							<div class="pricing">
-		    						<p class="price"><span class="mr-2 price-dc">&#8377 200</span><span class="price-sale">&#8377 140</span></p>
+		    						<p class="price"><span>&#8377 200</span></p>
 		    					</div>
 		    					
 	    					</div>
