@@ -2,7 +2,7 @@
 	width: 100%;
     margin:  0 auto;
     padding: 2em 0 4em 0;
-    /* background-color:  #ffa45c; */
+    /* background-color:  #ed8a63; */
 	display: flex;
 	display: -webkit-flex;
 	justify-content: center;
@@ -248,7 +248,7 @@
 
 .head-active {
     border: none;
-    border-bottom: 4px solid  #ffa45c;
+    border-bottom: 4px solid  #ed8a63;
     padding: 7px;
     transition: 0.3s ease;
     font-weight: bolder;
