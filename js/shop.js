@@ -186,11 +186,11 @@ $.get('/product/getProducts', {categoryId: categoryId}, (data)=>{
     $('#na').click(function() {
         $('span.sort-method-selected').html($(this).html());
         if(typeof filterData === 'undefined') {
-            data.sort((a, b) => (a.id > b.id) ? 1 : -1);
+            data.sort((a, b) => (a.id < b.id) ? 1 : -1);
         }
         else {
-            filterData.sort((a, b) => (a.id > b.id) ? 1 : -1);
-            data.sort((a, b) => (a.id > b.id) ? 1 : -1);
+            filterData.sort((a, b) => (a.id < b.id) ? 1 : -1);
+            data.sort((a, b) => (a.id < b.id) ? 1 : -1);
         }
         $('.block-27 ul li:eq(1)').click();
     });
