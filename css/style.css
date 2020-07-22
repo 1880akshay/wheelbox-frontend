@@ -1326,6 +1326,12 @@ pre {
   .offset-xl-11 {
     margin-left: 91.66667%; } }
 
+.section-bg-prop {
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .table {
   width: 100%;
   margin-bottom: 1rem;
@@ -9820,14 +9826,18 @@ textarea.form-control {
   width: 100%; }
 
 .contact-section .contact-form {
-  width: 100%; }
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
 
 .block-9 .form-control {
   outline: none !important;
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
   font-size: 15px; }
-
+.contact-form input, .contact-form textarea {
+  border-radius: 30px;
+  padding: 10px 16px;
+}
 .block-21 .blog-img {
   display: block;
   height: 80px;
@@ -10785,3 +10795,38 @@ span.icon-shopping_cart {
 .login-different-text {
   display: none;
 }
+
+.contact-card {
+  height: 120px;
+  line-height: 120px;
+  width: 100%;
+  border-radius: 12px;
+  border-left: 4px solid #ffa45c;
+  border-right: 4px solid #ffa45c;
+}
+.contact-card p {
+  line-height: 1.5;
+  vertical-align: middle;
+  display: inline-block;
+}
+.mapouter{
+  position:relative;
+  text-align:right;
+  height:55%;
+  width:100%;
+  border: 1px solid #b3b3b3;
+}
+.mapouter iframe {
+  width: 100%;
+  height: 100%;
+}
+@media (max-width:992px) and (min-width: 760px) {
+  .mapouter {
+    height: 34%;
+  }
+}
+.gmap_canvas {
+  overflow:hidden;
+  background:none!important;
+  height:100%;
+  width:100%;}
