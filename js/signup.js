@@ -43,80 +43,95 @@ $('#login-head').click(function() {
       }
   });
 
-$('.form-row #phone').change(function() {
-  var phone = document.getElementById('phone');
-  if(phone.checkValidity()) {
-    $('.send-otp').css('cursor', 'pointer');
-  }
-  else {
-    $('.send-otp').css('cursor', 'not-allowed');
-  }
-})
-$('.send-otp').hover(function(){
-  if(phone.checkValidity()) {
-    $('.send-otp').css('text-decoration', 'underline');
-  }
-}, function() {
-  if(phone.checkValidity()) {
-    $('.send-otp').css('text-decoration', 'none');
-  }
-})
 
 /******api calls****/
 
-$('.send-otp').click(function() {
-  var phone = document.getElementById('phone');
-  if(phone.checkValidity()) {
-    $.post('/login/sendOTP', {phoneNumber: Number($('.form-row #phone').val())}, (data) => {
-      if(data.type === 'success') {
-        alert("OTP sent successfully!");
-      }
-      else if(data.type === 'error') {
-        alert('An error occurred! Please try again');
-      }
-      $('.resend-otp').fadeIn();
-    })
-  }
-})
+var usernameValidation = 0;
+var phoneNumberValidation = 0;
 
-$('.resend-otp').click(function() {
-  var phone = document.getElementById('phone');
-  if(phone.checkValidity()) {
-    $.post('/login/resendOTP', {phoneNumber: Number($('.form-row #phone').val())}, (data) => {
-      if(data.type === 'success') {
-        alert('OTP sent successfully!');
+$('input#username1').blur(function() {
+  var username = $('input#username1').val();
+  if(username !== '') {
+    $.get('/login/isUser', {username: username}, (data) => {
+      if(data === 'Success') {
+        $('#username-taken').hide();
+        $('#username-available').show();
+        usernameValidation = 1;
       }
-      else if(data.type === 'error') {
-        alert('An error occurred! Please try again');
+      else if(data === 'FAILED') {
+        $('#username-taken').show();
+        $('#username-available').hide();
+        usernameValidation = 0;
       }
-    })
+    });
   }
-})
+});
+
+$('input#phone').blur(function() {
+  var phoneNumber = $('input#phone').val();
+  if(phoneNumber.length === 10) {
+    $.get('/login/isPhoneNumber', {phoneNumber: Number(phoneNumber)}, (data) => {
+      if(data === 'Success') {
+        $('#phone-taken').hide();
+        $('#phone-available').show();
+        phoneNumberValidation = 1;
+      }
+      else if(data === 'FAILED') {
+        $('#phone-taken').show();
+        $('#phone-available').hide();
+        phoneNumberValidation = 0;
+      }
+    });
+  }
+});
 
 $('.page-sign-up #signup-form').submit(function(event) {
   event.preventDefault();
-  $.post('/login/verifyOTP', {phoneNumber: Number($('.form-row #phone').val()), otp: Number($('.form-row #otp').val())}, (data) => {
-    if(data.type === 'success') {
-
-      var credentials = {
-        username: $('.form-row #username1').val(),
-        password: $('.form-row #password1').val(),
-        firstName: $('.form-row #first-name').val(),
-        lastName: $('.form-row #last-name').val(),
-        mainPhoneNumber: Number($('.form-row #phone').val()),
-        mainEmail: $('.form-row #email').val()
+  if(usernameValidation && phoneNumberValidation) {
+    var credentials = {
+      username: $('.form-row #username1').val(),
+      password: $('.form-row #password1').val(),
+      firstName: $('.form-row #first-name').val(),
+      lastName: $('.form-row #last-name').val(),
+      mainPhoneNumber: Number($('.form-row #phone').val()),
+      mainEmail: $('.form-row #email').val()
+    }
+    $.post('/login/sendOTP', {phoneNumber: credentials.mainPhoneNumber}, (data) => {
+      if(data.type === 'error') {
+        alert("An error occurred! Please try again");
       }
-      $.post('/login/signup', credentials, (user) => {
-        if(typeof user === 'object') {
-          if(!alert('Registered successfully! Login to continue')) window.location.reload(true);
-        }
-        else {
-          alert('An error occurred! Please try again');
-        }
-      })
-    }
-    else if(data.type === 'error') {
-      alert('Verification failed! Please try again');
-    }
-  })
-})
+      else if(data.type === 'success') {
+        $('.page-sign-up').empty();
+        $('.page-sign-up').append('<form id="signup-otp-form"><div class="text-center text-success mb-4">An OTP has been sent to your Phone number!</div><div class="form-row"><label for="otp">OTP</label><input type="tel" name="otp" id="otp" pattern="^[0-9]*$" class="input-text" required style="margin-bottom: 5px;" ><i class="fa fa-key form-icon"></i></div><span class="resend-otp-row">Didn\'t receive OTP?&nbsp; <span class="resend-otp">Resend OTP</span></span><div class="form-row-last"><input type="submit" class="register btn btn-orange" value="Verify and Register" style="margin-top: 15px"></div></form>');
+        $('#signup-otp-form').submit(function(e) {
+          e.preventDefault();
+          $.post('/login/verifyOTP', {phoneNumber: credentials.mainPhoneNumber, otp: Number($('input#otp').val())}, (data2) => {
+            if(data2.type === 'error') {
+              if(!alert('Verification failed! Please try again')) window.location.reload(true);
+            }
+            else if(data2.type === 'success') {
+              $.post('/login/signup', credentials, (user) => {
+                if(typeof user === 'object') {
+                  if(!alert('Registered successfully! Login to continue')) window.location.reload(true);
+                }
+                else {
+                  if(!alert('An error occurred! Please try again')) window.location.reload(true);
+                }
+              });
+            }
+          });
+        });
+        $('.resend-otp').click(function() {
+          $.post('/login/resendOTP', {phoneNumber: credentials.mainPhoneNumber}, (data3) => {
+            if(data3.type === 'error') {
+              alert('An error occurred! Please try again');
+            }
+            else if(data3.type === 'success') {
+              alert('OTP sent successfully!');
+            }
+          });
+        });
+      }
+    });
+  }
+});

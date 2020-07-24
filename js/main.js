@@ -64,7 +64,7 @@
 		for(var i=0; i<data.length; i++) {
 			$('ul .categories-nav-menu').append('<a class="dropdown-item" href="shop.html?'+data[i].id+'&'+data[i].value+'">'+data[i].value+'</a>')
 		}
-	})
+	});
 
 
 	// Scrollax

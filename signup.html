@@ -51,7 +51,7 @@
 	          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
 	          <li class="nav-item dropdown" style="cursor: pointer;">
               <div class="nav-link dropdown-toggle" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</div>
-              <div class="dropdown-menu" aria-labelledby="dropdown04">
+              <div class="dropdown-menu categories-nav-menu" aria-labelledby="dropdown04">
               	<!-- <a class="dropdown-item" href="shop.html">Bedding</a>
                 <a class="dropdown-item" href="shop.html">Bed-Elements</a>
                 <a class="dropdown-item" href="shop.html">Cushions</a>
@@ -102,7 +102,7 @@
                         </div>
                     </center>
                     <div class="page-sign-up">
-                        <form action="/login/signup" method="POST" id="signup-form">
+                        <form method="POST" id="signup-form">
                             <div class="form-row">
                                 <label for="first-name">FIRST NAME</label>
                                 <input type="text" name="firstName" id="first-name" class="input-text" required>
@@ -117,6 +117,8 @@
                                 <label for="username1">USERNAME</label>
                                 <input type="text" name="username" id="username1" class="input-text" required>
                                 <i class="fa fa-user form-icon"></i>
+                                <i class="fa fa-times text-danger validation-icon" id="username-taken" title="Username already taken"></i>
+                                <i class="fa fa-check text-success validation-icon" id="username-available" title="Username available"></i>
                             </div>
                             <div class="form-row">
                                 <label for="password1">PASSWORD</label>
@@ -133,20 +135,24 @@
                                 <label for="phone">PHONE NUMBER</label>
                                 <input type="tel" name="phone" id="phone" pattern="^\d{10}$" class="input-text" required >
                                 <i class="fa fa-phone form-icon"></i>
+                                <i class="fa fa-times text-danger validation-icon" id="phone-taken" title="Phone number already exists"></i>
+                                <i class="fa fa-check text-success validation-icon" id="phone-available" title="Phone number available"></i>
                             </div>
-                            <span class="resend-otp">Resend OTP</span>
+                            <!-- <span class="resend-otp">Resend OTP</span>
                             <span class="send-otp">Send OTP</span>
                             <div class="form-row">
                                 <label for="otp">OTP</label>
                                 <input type="tel" name="otp" id="otp" pattern="^[0-9]*$" class="input-text" required >
                                 <i class="fa fa-key form-icon"></i>
-                            </div>
+                            </div> -->
                            
                             <div class="form-row-last">
-                                <input type="submit" class="register btn btn-orange" value="Verify and Register">
+                                <input type="submit" class="register btn btn-orange" value="Next">
                                 
                             </div>
                         </form>
+                        
+
                     </div>
 
                     <div class="page-login">
@@ -268,8 +274,9 @@
   <script src="js/jquery.animateNumber.min.js"></script>
   <script src="js/bootstrap-datepicker.js"></script>
   <script src="js/scrollax.min.js"></script>
-  <script src="js/signup.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/signup.js"></script>
+  
     
   </body>
 </html>

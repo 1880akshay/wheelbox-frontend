@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
-  <body class="goto-here" onload="clearCheckboxes()">
+  <body class="goto-here">
 	<!-- <div class="py-1 bg-black">
     	<div class="container">
     		<div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
@@ -139,7 +139,7 @@
 							<li><input type="checkbox" id="red">&emsp;<label for="red">Red</label></li>
 						</ul>
 						<hr style="margin-top: 0px;">
-		    		</div> -->
+					</div> -->
 		    		
 					
     			</div>
@@ -258,40 +258,6 @@
   <script src="js/scrollax.min.js"></script>
   <script src="js/shop.js"></script>
   <script src="js/main.js"></script>
-
-
-  <script>
-	  $('.side-categories').click(function() {
-		$(this).next().slideToggle('fast');
-		if($(this).find('span').html() === '-') {
-			$(this).find('span').html('+');
-		}
-		else {
-			$(this).find('span').html('-');
-		}
-	  });
-
-	  function clearCheckboxes() {
-		$('.sidebar input[type=checkbox]').prop('checked', false);
-	  }
-
-	  $('button#filter-btn').click(function() {
-		  if($('.sidebar.filter-options').css('display') === 'none') {
-			$('.sidebar.filter-options').show();
-			$('.sidebar.filter-options').animate({'width': '300px'}, 200);
-		  }
-		  else {
-			$('.sidebar.filter-options').animate({'width': '0'}, 200, function() {
-				$('.sidebar.filter-options').hide();
-			});
-		  }
-	  })
-	  $('.filter-options-hide').click(function() {
-		$('.sidebar.filter-options').animate({'width': '0'}, 200, function() {
-			$('.sidebar.filter-options').hide();
-		});
-	  })
-  </script>
     
   </body>
 </html>

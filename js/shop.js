@@ -9,6 +9,8 @@ if(queryString === '') {
 
 $('h1.category-name').html(categoryName);
 
+
+
 var itemString = '<div class="col-6 col-lg-3 ftco-animate"><div class="product"><a href="#" class="img-prod"><img class="img-fluid" src="" alt=""><div class="overlay"></div></a><div class="text py-3 px-3"><h3><a href="#" class="product-names"></a><span class="product-id"></span></h3><div class="d-flex"><div class="pricing"><p class="price">&#8377 <span></span></p></div></div><p class="bottom-area d-flex px-3"><a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart</span></a><a href="#" class="buy-now text-center py-2">Buy now<span></span></a></p></div></div></div>';
 var pageString = '<li class="pagination-num"><a href="#"><span></span></a></li>';
 
@@ -19,15 +21,18 @@ $.get('/product/getFeatures', {categoryId: categoryId}, (features) => {
         $('.row .sidebar').append(sidebarString);
         $('.sidebar-box-2 h2.heading.side-categories:eq('+i+')').prepend(features[i].value);
         $('ul.side-drop:eq('+i+')').attr('data-feature-id', features[i].id);
-        $.get('/product/getFeatureOptions', {featureId: features[i].id}, (featureOptions) => {
-            for(var j=0; j<featureOptions.length; j++) {
-                $('ul.side-drop:eq('+i+')').append('<li><input type="checkbox" id="'+featureOptions[j].value.split(' ').join('-')+'" data-feature-option-id="'+featureOptions[j].id+'">&emsp;<label for="'+featureOptions[j].value.split(' ').join('-')+'">'+featureOptions[j].value+'</label></li>');
+        $.get('/product/getFeatureOptions', {featureId: features[i].id, index: i}, (featureOptions) => {
+            for(var j=0; j<featureOptions.data.length; j++) {
+                $('.side-drop:eq('+featureOptions.index+')').append('<li><input type="checkbox" id="'+featureOptions.data[j].value+'" data-feature-option-id="'+featureOptions.data[j].id+'">&emsp;<label for="'+featureOptions.data[j].value+'">'+featureOptions.data[j].value+'</label></li>');
             }
             
         })
         
     }
+    
+    
 });
+
 
 var numOnOne = 12; //number of cards on one page
 
@@ -222,8 +227,9 @@ $.get('/product/getProducts', {categoryId: categoryId}, (data)=>{
     });
 
 
-    $('ul.side-drop li input[type=checkbox]').click(function(){
+    $('.sidebar').on('click', 'ul.side-drop li input[type=checkbox]', function(){
         var checked = $('.sidebar input[type=checkbox]:checked').length;
+        console.log(checked);
         if(checked === 0) {
             filterData = undefined;
             $('.row-products').empty();
@@ -252,6 +258,7 @@ $.get('/product/getProducts', {categoryId: categoryId}, (data)=>{
         else {
             filterData = data.filter((obj) => {
                 var featoptarray = obj.featureOptions;
+                console.log(featoptarray);
                 for(var i=0; i<$('ul.side-drop').length; i++) {
                     var fId = Number($('ul.side-drop:eq('+i+')').attr('data-feature-id'));
                     var fOId = [];
@@ -370,6 +377,34 @@ $.get('/product/getProducts', {categoryId: categoryId}, (data)=>{
                 addProduct(i%numOnOne, i);
             }
         });
-    })
+    });
 
 });
+
+$('.sidebar').on('click', '.side-categories', function() {
+    $(this).next().slideToggle('fast');
+    if($(this).find('span').html() === '-') {
+        $(this).find('span').html('+');
+    }
+    else {
+        $(this).find('span').html('-');
+    }
+});
+
+
+  $('button#filter-btn').click(function() {
+      if($('.sidebar.filter-options').css('display') === 'none') {
+        $('.sidebar.filter-options').show();
+        $('.sidebar.filter-options').animate({'width': '300px'}, 200);
+      }
+      else {
+        $('.sidebar.filter-options').animate({'width': '0'}, 200, function() {
+            $('.sidebar.filter-options').hide();
+        });
+      }
+  })
+  $('.filter-options-hide').click(function() {
+    $('.sidebar.filter-options').animate({'width': '0'}, 200, function() {
+        $('.sidebar.filter-options').hide();
+    });
+  })

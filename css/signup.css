@@ -138,20 +138,20 @@
     font-weight: 900;
 } */
 .form-v7-content .form-detail .input-text {
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 }
 #phone {
     margin-bottom: 0px;
 }
-.send-otp, .resend-otp {
+#signup-otp-form {
+    margin-top: 180px;
+}
+.resend-otp-row {
     font-size: 11px;
-    cursor: not-allowed;
     float: right;
-    margin-left: 10px;
 }
 .resend-otp {
     cursor: pointer;
-    display: none;
 }
 .resend-otp:hover {
     text-decoration: underline;
@@ -208,7 +208,7 @@
 }
 
 .form-v7-content .form-detail .form-row-last {
-    margin-top: 35px;
+    margin-top: 50px;
 }
 .form-v7-content .form-detail .form-row-last input {
 	padding: 15px;
@@ -232,8 +232,8 @@
 }
 
 .login-signup {
-    margin-top: -50px;
-    margin-bottom: 30px;
+    margin-top: -40px;
+    margin-bottom: 35px;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -302,5 +302,11 @@
     right: 0px;
     top: 33px;
     cursor: pointer;
+}
+.validation-icon {
+    position: absolute;
+    right: -15px;
+    top: 33px;
+    display: none;
 }
 
