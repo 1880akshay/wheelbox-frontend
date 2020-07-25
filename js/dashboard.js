@@ -90,12 +90,14 @@ $.get('/product/getCategories', (categories) => {
 
 $('select#category').change(function() {
     if($('select#category option:selected').val() !== '') {
+        $('.show-on-api-call').empty();
+        $('.show-on-api-call').append('<div class="p-form-row"><label><u>FEATURES</u>:</label></div>');
         $.get('/product/getFeatures', {categoryId: parseInt($('select#category option:selected').val())}, (features) => {
             for(var i=0; i<features.length; i++) {
                 $('.show-on-api-call').append('<div class="p-form-row"><label for="'+ features[i].value +'" class="add-dropdown-labels">'+ features[i].value + ' : </label><select name="'+ features[i].value +'" id="'+ features[i].value +'" class="add-dropdowns" required><option value="">Select</option></select><i class="fa fa-angle-down" id="arrow-down"></i></div>');
-                $.get('/product/getFeatureOptions', {featureId: features[i].id}, (featureOptions) => {
-                   for(var j=0; j<featureOptions.length; j++) {
-                    $('.show-on-api-call select#'+features[i].value).append('<option value="'+ featureOptions[j].id +'">'+ featureOptions[j].value +'</option>');
+                $.get('/product/getFeatureOptions', {featureId: features[i].id, index: i}, (featureOptions) => {
+                   for(var j=0; j<featureOptions.data.length; j++) {
+                    $('.show-on-api-call select#'+features[featureOptions.index].value).append('<option value="'+ featureOptions.data[j].id +'">'+ featureOptions.data[j].value +'</option>');
                    }
                 });
             }
@@ -104,7 +106,9 @@ $('select#category').change(function() {
         $('.show-on-api-call').fadeIn('fast');
     }
     else {
-        $('.show-on-api-call').fadeOut('fast');
+        $('.show-on-api-call').fadeOut('fast', function() {
+            $('.show-on-api-call').empty();
+        });
     }
 });
 

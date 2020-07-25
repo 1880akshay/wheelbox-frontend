@@ -426,6 +426,47 @@
 		$(this).css('width', max + '%');
 	});
 
+	//secondary navbar
+	$("[data-trigger]").on("click", function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        var offcanvas_id =  $(this).attr('data-trigger');
+        $(offcanvas_id).toggleClass("show");
+        $('body').toggleClass("offcanvas-active");
+        $(".screen-overlay").toggleClass("show");
+    }); 
+
+    $(".btn-close, .screen-overlay").click(function(e){
+    	$(".screen-overlay").removeClass("show");
+        $(".mobile-offcanvas").removeClass("show");
+        $("body").removeClass("offcanvas-active");
+
+
+	}); 
+
+	//categories in secondary navbar
+	$.get('/product/getCategories', (data) => {
+		for(var i=0; i<data.length; i++) {
+			$('#navbar_main ul.navbar-nav').append('<li class="nav-item"><a class="nav-link" href="shop.html?'+data[i].id+'&'+data[i].value+'">'+data[i].value+'</a></li><hr class="secondary-nav-hr">')
+		}
+	});
+	
+	if($(window).width() < 992) {
+		$('.secondary-nav-parent').removeClass('container');
+	}
+	else {
+		$('.secondary-nav-parent').addClass('container');
+	}
+
+	$(window).resize(function() {
+		if($(window).width() < 992) {
+			$('.secondary-nav-parent').removeClass('container');
+		}
+		else {
+			$('.secondary-nav-parent').addClass('container');
+		}
+	})
+
 })(jQuery);
 
 
